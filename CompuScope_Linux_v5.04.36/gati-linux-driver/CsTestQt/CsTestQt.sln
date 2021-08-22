@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cstestqt", "cstestqt.vcxproj", "{560722D6-FA23-308F-99D4-69AF9476347A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{560722D6-FA23-308F-99D4-69AF9476347A}.Debug|x86.ActiveCfg = Debug|Win32
+		{560722D6-FA23-308F-99D4-69AF9476347A}.Debug|x86.Build.0 = Debug|Win32
+		{560722D6-FA23-308F-99D4-69AF9476347A}.Release|x86.ActiveCfg = Release|Win32
+		{560722D6-FA23-308F-99D4-69AF9476347A}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

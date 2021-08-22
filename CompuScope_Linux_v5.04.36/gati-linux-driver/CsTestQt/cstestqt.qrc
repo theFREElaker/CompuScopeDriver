@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/CsTestQt">
+        <file>CsTestQt.ico</file>
+    </qresource>
+</RCC>

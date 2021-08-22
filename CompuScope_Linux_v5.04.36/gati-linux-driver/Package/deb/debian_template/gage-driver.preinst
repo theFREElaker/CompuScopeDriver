@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if ! dpkg -l | grep -q "linux-headers-$(uname -r)"; then
+	echo "The package \"linux-headers-$(uname -r)\" is required. Trying to install."
+	if ! sudo apt install linux-headers-$(uname -r); then
+		echo " *** Error : Unable to install \"linux-headers-$(uname -r)\"."
+		echo " *** Please install it before installing the gage-driver package."
+		exit 1
+	fi
+fi

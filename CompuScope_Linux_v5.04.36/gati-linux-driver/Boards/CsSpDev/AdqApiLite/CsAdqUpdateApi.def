@@ -1,0 +1,16 @@
+EXPORTS
+	CreateADQControlUnit
+	DeleteADQControlUnit
+	ADQControlUnit_FindDevices
+	ADQControlUnit_NofADQ
+	ADQ_GetUSBAddress
+	ADQ_GetRevision
+	ADQ_GetPID	
+	ADQ_EnableSpi
+	ADQ_DisableSpi
+	ADQ_FlashUploadStart
+	ADQ_FlashUploadPart
+	ADQ_FlashUploadEnd
+	ADQ_FlashDownloadStart
+	ADQ_FlashDownloadPart
+	ADQ_FlashDownloadEnd

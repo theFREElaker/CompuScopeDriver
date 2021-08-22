@@ -1,0 +1,1169 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: gage-driver
+Source: http://www.gage-applied.com/
+
+Files:     Boards/Bd_Include/CsCardState.h
+           Boards/Bd_Include/CsDecadeRegs.h
+           Boards/Bd_Include/CsDecadeState.h
+           Boards/Bd_Include/CsDriverTypes.h
+           Boards/Bd_Include/CsDrvApi.h
+           Boards/Bd_Include/CsDrvDefines.h
+           Boards/Bd_Include/CsFastBallState.h
+           Boards/Bd_Include/CsHexagonRegs.h
+           Boards/Bd_Include/CsHexagonState.h
+           Boards/Bd_Include/CsIoctl.h
+           Boards/Bd_Include/CsIoctlTypes.h
+           Boards/Bd_Include/CsLinuxSignals.h
+           Boards/Bd_Include/CsPlxDefines.h
+           Boards/Bd_Include/CsRabbitState.h
+           Boards/Bd_Include/CsSpiderState.h
+           Boards/Bd_Include/CsSplendaState.h
+           Boards/Bd_Include/CsSymLinks.h
+           Boards/Bd_Include/DeereCardState.h
+           Boards/CsDevRemote/Common/CsDevRemote.cpp
+           Boards/CsDevRemote/Common/GageSocket.cpp
+           Boards/CsDevRemote/Common/GageSocket.h
+           Boards/CsDevRemote/Common/GageSystemManager.cpp
+           Boards/CsDevRemote/Common/GageSystemManager.h
+           Boards/CsDevRemote/Common/RemoteSystemInfo.cpp
+           Boards/CsDevRemote/Common/RemoteSystemInfo.h
+           Boards/CsDevRemote/Common/VxiDiscovery.c
+           Boards/CsDevRemote/Common/VxiDiscovery.h
+           Boards/CsDevRemote/Common/vxi11.h
+           Boards/CsDevRemote/Common/vxi11_clnt.c
+           Boards/CsDevRemote/Common/vxi11_xdr.c
+           Boards/CsSpDev/AdqApi/Cy/Inc/CyAPI.h
+           Boards/CsSpDev/AdqApi/Inc/ADQ108.h
+           Boards/CsSpDev/AdqApi/Inc/ADQ112.h
+           Boards/CsSpDev/AdqApi/Inc/ADQ114.h
+           Boards/CsSpDev/AdqApi/Inc/ADQ214.h
+           Boards/CsSpDev/AdqApi/Inc/ADQAPI_definitions.h
+           Boards/CsSpDev/AdqApi/Inc/ADQControlUnit.h
+           Boards/CsSpDev/AdqApi/Inc/ADQInterface.h
+           Boards/CsSpDev/AdqApi/Inc/Adq.h
+           Boards/CsSpDev/AdqApi/Inc/AdqApi.h
+           Boards/CsSpDev/AdqApi/Inc/HWIF.h
+           Boards/CsSpDev/AdqApi/Inc/PCIe.h
+           Boards/CsSpDev/AdqApi/Inc/USB.h
+           Boards/CsSpDev/AdqApi/Inc/swrev.h
+           Boards/CsSpDev/AdqApi/Inc/virtex5_lib.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/cstring.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/diag_lib.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/kpstdlib.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/pccard_cis.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/pci_diag_lib.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/pci_regs.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/print_struct.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/status_strings.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/utils.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/wd_kp.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/wd_log.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/wdc_defs.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/wdc_diag_lib.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/wdc_lib.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/wdu_lib.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/windrvr_events.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/windrvr_hotswap.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/windrvr_int_thread.h
+           Boards/CsSpDev/AdqApi/Jungo/Src/diag_lib.c
+           Boards/CsSpDev/AdqApi/Jungo/Src/pci_diag_lib.c
+           Boards/CsSpDev/AdqApi/Jungo/Src/print_struct.c
+           Boards/CsSpDev/AdqApi/Jungo/Src/wdc_diag_lib.c
+           Boards/CsSpDev/AdqApi/Src/ADQ.cpp
+           Boards/CsSpDev/AdqApi/Src/ADQ108.cpp
+           Boards/CsSpDev/AdqApi/Src/ADQ112.cpp
+           Boards/CsSpDev/AdqApi/Src/ADQ114.cpp
+           Boards/CsSpDev/AdqApi/Src/ADQ214.cpp
+           Boards/CsSpDev/AdqApi/Src/ADQAPI.cpp
+           Boards/CsSpDev/AdqApi/Src/ADQControlUnit.cpp
+           Boards/CsSpDev/AdqApi/Src/CsUsbApi.rc
+           Boards/CsSpDev/AdqApi/Src/HWIF.cpp
+           Boards/CsSpDev/AdqApi/Src/PCIe.cpp
+           Boards/CsSpDev/AdqApi/Src/RES/CsUsbApi.rc2
+           Boards/CsSpDev/AdqApi/Src/USB.cpp
+           Boards/CsSpDev/AdqApi/Src/resource.h
+           Boards/CsSpDev/AdqApi/Src/virtex5_lib.c
+           Boards/CsSpDev/AdqApiLite/ADQAPI_Lite.cpp
+           Boards/CsSpDev/AdqApiLite/AdqApiLite_definitions.h
+           Boards/CsSpDev/AdqApiLite/AdqLite.cpp
+           Boards/CsSpDev/AdqApiLite/AdqLite.h
+           Boards/CsSpDev/AdqApiLite/AdqLiteControlUnit.cpp
+           Boards/CsSpDev/AdqApiLite/AdqLiteControlUnit.h
+           Boards/CsSpDev/AdqApiLite/CsAdqUpdateApi.def
+           Boards/CsSpDev/AdqApiLite/CsUsbUpdateApi.rc
+           Boards/CsSpDev/AdqApiLite/res/CsUsbUpdateApi.rc2
+           Boards/CsSpDev/AdqApiLite/resource.h
+           Boards/CsSpDev/Common/CsAdqUpdate.cpp
+           Boards/CsSpDev/Common/CsAdqUpdate.h
+           Boards/CsSpDev/Common/CsSpDevApi.cpp
+           Boards/CsSpDev/Common/CsSpDevFuncTypes.h
+           Boards/CsSpDev/Common/CsSpDevXfer.cpp
+           Boards/CsSpDev/Common/CsSpDevice.cpp
+           Boards/CsSpDev/Common/CsSpDevice.h
+           Boards/CsSpDev/Common/CsSpdevCfg.cpp
+           Boards/CsSpDev/Common/CsSpdevOps.cpp
+           Boards/CsSpDev/Common/CsUsb.cpp
+           Boards/CsSpDev/Common/CsUsbIf.cpp
+           Boards/KernelSpace/CsDecade12/CsDecadeDrv.c
+           Boards/KernelSpace/CsDecade12/CsDecadeFlashObj.c
+           Boards/KernelSpace/CsDecade12/Include/DecadeAlteraSupport.h
+           Boards/KernelSpace/CsDecade12/Include/DecadeDrv.h
+           Boards/KernelSpace/CsDecade12/Include/DecadeFlash.h
+           Boards/KernelSpace/CsDecade12/Include/DecadeFlashObj.h
+           Boards/KernelSpace/CsDecade12/Include/DecadeGageDrv.h
+           Boards/KernelSpace/CsDecade12/Include/DecadeNiosApi.h
+           Boards/KernelSpace/CsDecade12/Include/MSIX_Struct.h
+           Boards/KernelSpace/CsDecade12/Linux/CsDecadeFlash.c
+           Boards/KernelSpace/CsDecade12/Linux/CsDecadeLinux.c
+           Boards/KernelSpace/CsDecade12/Linux/DecadeAlteraSupport.c
+           Boards/KernelSpace/CsDecade12/Linux/DecadeGageDrv.c
+           Boards/KernelSpace/CsDecade12/Linux/DecadeNiosApi.c
+           Boards/KernelSpace/CsDecade12/Linux/Makefile
+           Boards/KernelSpace/CsHexagon/CsHexagonDrv.c
+           Boards/KernelSpace/CsHexagon/CsHexagonFlashObj.c
+           Boards/KernelSpace/CsHexagon/Include/HexagonAlteraSupport.h
+           Boards/KernelSpace/CsHexagon/Include/HexagonDrv.h
+           Boards/KernelSpace/CsHexagon/Include/HexagonFlash.h
+           Boards/KernelSpace/CsHexagon/Include/HexagonFlashObj.h
+           Boards/KernelSpace/CsHexagon/Include/HexagonGageDrv.h
+           Boards/KernelSpace/CsHexagon/Include/HexagonNiosApi.h
+           Boards/KernelSpace/CsHexagon/Include/MSIX_Struct.h
+           Boards/KernelSpace/CsHexagon/Linux/CsHexagonFlash.c
+           Boards/KernelSpace/CsHexagon/Linux/CsHexagonLinux.c
+           Boards/KernelSpace/CsHexagon/Linux/HexagonAlteraSupport.c
+           Boards/KernelSpace/CsHexagon/Linux/HexagonGageDrv.c
+           Boards/KernelSpace/CsHexagon/Linux/HexagonNiosApi.c
+           Boards/KernelSpace/CsHexagon/Linux/Makefile
+           Boards/KernelSpace/CsJohnDeere/CsDeereDrv.c
+           Boards/KernelSpace/CsJohnDeere/CsDeereDrv.h
+           Boards/KernelSpace/CsJohnDeere/CsDeereFlashObj.c
+           Boards/KernelSpace/CsJohnDeere/CsDeereFlashObj.h
+           Boards/KernelSpace/CsJohnDeere/Linux/CsDeereLinux.c
+           Boards/KernelSpace/CsJohnDeere/Linux/Makefile
+           Boards/KernelSpace/CsRabbit/CsRabbitDrv.c
+           Boards/KernelSpace/CsRabbit/CsRabbitDrv.h
+           Boards/KernelSpace/CsRabbit/CsRabbitFlashObj.c
+           Boards/KernelSpace/CsRabbit/CsRabbitFlashObj.h
+           Boards/KernelSpace/CsRabbit/DIRS
+           Boards/KernelSpace/CsRabbit/Linux/CsRabbitLinux.c
+           Boards/KernelSpace/CsRabbit/Linux/Makefile
+           Boards/KernelSpace/CsSpider/CsSpiderDrv.c
+           Boards/KernelSpace/CsSpider/CsSpiderDrv.h
+           Boards/KernelSpace/CsSpider/CsSpiderFlashObj.c
+           Boards/KernelSpace/CsSpider/CsSpiderFlashObj.h
+           Boards/KernelSpace/CsSpider/DIRS
+           Boards/KernelSpace/CsSpider/Linux/CsSpiderLinux.c
+           Boards/KernelSpace/CsSpider/Linux/Makefile
+           Boards/KernelSpace/CsSplenda/CsSplendaDrv.c
+           Boards/KernelSpace/CsSplenda/CsSplendaDrv.h
+           Boards/KernelSpace/CsSplenda/DIRS
+           Boards/KernelSpace/CsSplenda/Linux/CsSplendaLinux.c
+           Boards/KernelSpace/CsSplenda/Linux/Makefile
+           Boards/KernelSpace/DIRS
+           Boards/KernelSpace/KS_Common/AlteraSupport.c
+           Boards/KernelSpace/KS_Common/CsNucleonFlash.c
+           Boards/KernelSpace/KS_Common/CsPlxFlash.c
+           Boards/KernelSpace/KS_Common/Linux/DriverEntry.c
+           Boards/KernelSpace/KS_Common/Linux/GageDma.c
+           Boards/KernelSpace/KS_Common/Linux/GageDrv.c
+           Boards/KernelSpace/KS_Common/Linux/GageMisc.c
+           Boards/KernelSpace/KS_Common/Linux/GageWrapper.c
+           Boards/KernelSpace/KS_Common/NiosApi.c
+           Boards/KernelSpace/KS_Common/PldaSupport.c
+           Boards/KernelSpace/KS_Common/PlxSupport.c
+           Boards/KernelSpace/KS_Common/TraceEvents.c
+           Boards/KernelSpace/KS_Include/AlteraSupport.h
+           Boards/KernelSpace/KS_Include/CsNucleonFlash.h
+           Boards/KernelSpace/KS_Include/CsPlxFlash.h
+           Boards/KernelSpace/KS_Include/CsTimer.h
+           Boards/KernelSpace/KS_Include/GageDrv.h
+           Boards/KernelSpace/KS_Include/GageWrapper.h
+           Boards/KernelSpace/KS_Include/Linux/gen_kdebug.h
+           Boards/KernelSpace/KS_Include/Linux/gen_kernel_interface.h
+           Boards/KernelSpace/KS_Include/Linux/gen_lang.h
+           Boards/KernelSpace/KS_Include/Linux/gen_port.h
+           Boards/KernelSpace/KS_Include/Linux/gen_port_linux.h
+           Boards/KernelSpace/KS_Include/Linux/gen_types.h
+           Boards/KernelSpace/KS_Include/Linux/gen_version.h
+           Boards/KernelSpace/KS_Include/NiosApi.h
+           Boards/KernelSpace/KS_Include/PldaSupport.h
+           Boards/KernelSpace/KS_Include/PlxDrvConsts.h
+           Boards/KernelSpace/KS_Include/PlxSupport.h
+           Boards/KernelSpace/KS_Include/Stream.h
+           Boards/KernelSpace/KS_Include/TraceEvents.h
+           Boards/KernelSpace/ddkbuild.bat
+           Boards/UserSpace/CsDecade12/Common/CsDecade.cpp
+           Boards/UserSpace/CsDecade12/Common/CsDecade.h
+           Boards/UserSpace/CsDecade12/Common/CsDecadeCalib.cpp
+           Boards/UserSpace/CsDecade12/Common/CsDecadeConfig.cpp
+           Boards/UserSpace/CsDecade12/Common/CsDecadeDataXfer.cpp
+           Boards/UserSpace/CsDecade12/Common/CsDecadeDev.cpp
+           Boards/UserSpace/CsDecade12/Common/CsDecadeEvtThread.cpp
+           Boards/UserSpace/CsDecade12/Common/CsDecadeFlash.cpp
+           Boards/UserSpace/CsDecade12/Common/CsDecadeHw.cpp
+           Boards/UserSpace/CsDecade12/Common/CsDecadeMisc.cpp
+           Boards/UserSpace/CsDecade12/Makefile.am
+           Boards/UserSpace/CsDemo/Common/BaseSignal.cpp
+           Boards/UserSpace/CsDemo/Common/BaseSignal.h
+           Boards/UserSpace/CsDemo/Common/CsDemo.cpp
+           Boards/UserSpace/CsDemo/Common/CsDemo.h
+           Boards/UserSpace/CsDemo/Common/GageDemo.cpp
+           Boards/UserSpace/CsDemo/Common/GageDemo.h
+           Boards/UserSpace/CsDemo/Common/GageDemoSystem.cpp
+           Boards/UserSpace/CsDemo/Common/GageDemoSystem.h
+           Boards/UserSpace/CsDemo/Common/SineWave.cpp
+           Boards/UserSpace/CsDemo/Common/SineWave.h
+           Boards/UserSpace/CsDemo/Common/SquareWave.cpp
+           Boards/UserSpace/CsDemo/Common/SquareWave.h
+           Boards/UserSpace/CsDemo/Common/TriangleWave.cpp
+           Boards/UserSpace/CsDemo/Common/TriangleWave.h
+           Boards/UserSpace/CsDemo/Common/Trigger.cpp
+           Boards/UserSpace/CsDemo/Common/Trigger.h
+           Boards/UserSpace/CsDemo/Common/TwoTone.cpp
+           Boards/UserSpace/CsDemo/Common/TwoTone.h
+           Boards/UserSpace/CsHexagon/Common/CsHexagon.cpp
+           Boards/UserSpace/CsHexagon/Common/CsHexagon.h
+           Boards/UserSpace/CsHexagon/Common/CsHexagonCalib.cpp
+           Boards/UserSpace/CsHexagon/Common/CsHexagonConfig.cpp
+           Boards/UserSpace/CsHexagon/Common/CsHexagonDataXfer.cpp
+           Boards/UserSpace/CsHexagon/Common/CsHexagonDbg.cpp
+           Boards/UserSpace/CsHexagon/Common/CsHexagonDev.cpp
+           Boards/UserSpace/CsHexagon/Common/CsHexagonEvtThread.cpp
+           Boards/UserSpace/CsHexagon/Common/CsHexagonFlash.cpp
+           Boards/UserSpace/CsHexagon/Common/CsHexagonHw.cpp
+           Boards/UserSpace/CsHexagon/Common/CsHexagonMisc.cpp
+           Boards/UserSpace/CsHexagon/Makefile.am
+           Boards/UserSpace/CsJohnDeere/Common/CsDeere.cpp
+           Boards/UserSpace/CsJohnDeere/Common/CsDeere.h
+           Boards/UserSpace/CsJohnDeere/Common/CsDeereCalib.cpp
+           Boards/UserSpace/CsJohnDeere/Common/CsDeereCommit.cpp
+           Boards/UserSpace/CsJohnDeere/Common/CsDeereConfig.cpp
+           Boards/UserSpace/CsJohnDeere/Common/CsDeereDataXfer.cpp
+           Boards/UserSpace/CsJohnDeere/Common/CsDeereDevice.cpp
+           Boards/UserSpace/CsJohnDeere/Common/CsDeereEvtThread.cpp
+           Boards/UserSpace/CsJohnDeere/Common/CsDeereFlashObj.cpp
+           Boards/UserSpace/CsJohnDeere/Common/CsDeereFlashObj.h
+           Boards/UserSpace/CsJohnDeere/Common/CsDeereHw.cpp
+           Boards/UserSpace/CsJohnDeere/Common/CsDeereMisc.cpp
+           Boards/UserSpace/CsJohnDeere/Common/CsDeereMs.cpp
+           Boards/UserSpace/CsJohnDeere/Common/CsDeereSineFit.cpp
+           Boards/UserSpace/CsJohnDeere/Common/CsDeereSineFit.h
+           Boards/UserSpace/CsJohnDeere/Makefile.am
+           Boards/UserSpace/CsRabbit/Common/CsRabbit.cpp
+           Boards/UserSpace/CsRabbit/Common/CsRabbit.h
+           Boards/UserSpace/CsRabbit/Common/CsRabbitCalib.cpp
+           Boards/UserSpace/CsRabbit/Common/CsRabbitConfig.cpp
+           Boards/UserSpace/CsRabbit/Common/CsRabbitDataXfer.cpp
+           Boards/UserSpace/CsRabbit/Common/CsRabbitDev.cpp
+           Boards/UserSpace/CsRabbit/Common/CsRabbitEvtThread.cpp
+           Boards/UserSpace/CsRabbit/Common/CsRabbitFlash.cpp
+           Boards/UserSpace/CsRabbit/Common/CsRabbitHw.cpp
+           Boards/UserSpace/CsRabbit/Common/CsRabbitMisc.cpp
+           Boards/UserSpace/CsRabbit/Makefile.am
+           Boards/UserSpace/CsSpider/Common/Cs8xxxHwCaps.h
+           Boards/UserSpace/CsSpider/Common/CsSpider.cpp
+           Boards/UserSpace/CsSpider/Common/CsSpider.h
+           Boards/UserSpace/CsSpider/Common/CsSpiderCalib.cpp
+           Boards/UserSpace/CsSpider/Common/CsSpiderConfig.cpp
+           Boards/UserSpace/CsSpider/Common/CsSpiderDataXfer.cpp
+           Boards/UserSpace/CsSpider/Common/CsSpiderDev.cpp
+           Boards/UserSpace/CsSpider/Common/CsSpiderEvtThread.cpp
+           Boards/UserSpace/CsSpider/Common/CsSpiderFlash.cpp
+           Boards/UserSpace/CsSpider/Common/CsSpiderHw.cpp
+           Boards/UserSpace/CsSpider/Common/CsSpiderMisc.cpp
+           Boards/UserSpace/CsSpider/Common/CsSpiderMs.cpp
+           Boards/UserSpace/CsSpider/Common/PeevAdaptor.cpp
+           Boards/UserSpace/CsSpider/Common/PeevAdaptor.h
+           Boards/UserSpace/CsSpider/Makefile.am
+           Boards/UserSpace/CsSplenda/Common/CsSplenda.cpp
+           Boards/UserSpace/CsSplenda/Common/CsSplenda.h
+           Boards/UserSpace/CsSplenda/Common/CsSplendaCalib.cpp
+           Boards/UserSpace/CsSplenda/Common/CsSplendaConfig.cpp
+           Boards/UserSpace/CsSplenda/Common/CsSplendaDataXfer.cpp
+           Boards/UserSpace/CsSplenda/Common/CsSplendaDev.cpp
+           Boards/UserSpace/CsSplenda/Common/CsSplendaEvtThread.cpp
+           Boards/UserSpace/CsSplenda/Common/CsSplendaFlash.cpp
+           Boards/UserSpace/CsSplenda/Common/CsSplendaHw.cpp
+           Boards/UserSpace/CsSplenda/Common/CsSplendaHw.h
+           Boards/UserSpace/CsSplenda/Common/CsSplendaHwCaps.h
+           Boards/UserSpace/CsSplenda/Common/CsSplendaMisc.cpp
+           Boards/UserSpace/CsSplenda/Makefile.am
+           Boards/UserSpace/US_Common/CsBaseHwDLL.cpp
+           Boards/UserSpace/US_Common/CsBoilerPlateDll.cpp
+           Boards/UserSpace/US_Common/CsDevIoCtl.cpp
+           Boards/UserSpace/US_Common/CsDeviceApi.cpp
+           Boards/UserSpace/US_Common/CsEvtThread.cpp
+           Boards/UserSpace/US_Common/CsNiosApi.cpp
+           Boards/UserSpace/US_Common/CsPlxBase.cpp
+           Boards/UserSpace/US_Common/CsPlxFlash.cpp
+           Boards/UserSpace/US_Common/GageCfgParser.cpp
+           Boards/UserSpace/US_Common/GageWrapper.cpp
+           Boards/UserSpace/US_Common/PeevAdaptor.cpp
+           Boards/UserSpace/US_Include/CsAdvHwDLL.h
+           Boards/UserSpace/US_Include/CsBaseHwDLL.h
+           Boards/UserSpace/US_Include/CsDevIoCtl.h
+           Boards/UserSpace/US_Include/CsDeviceApi.h
+           Boards/UserSpace/US_Include/CsNiosApi.h
+           Boards/UserSpace/US_Include/CsPlxBase.h
+           Boards/UserSpace/US_Include/CurrentDriver.h
+           Boards/UserSpace/US_Include/DllGlblVars.h
+           Boards/UserSpace/US_Include/DllStruct.h
+           Boards/UserSpace/US_Include/GageCfgParser.h
+           Boards/UserSpace/US_Include/GageWrapper.h
+           Boards/UserSpace/US_Include/PeevAdaptor.h
+           Boards/UserSpace/US_Include/PlxDrvConsts.h
+           Common/CriticalSection.cpp
+           Common/CsEventLog.cpp
+           Common/EventLog.cpp
+           Common/LegacyAddresses.cpp
+           Common/Linux/CWinEventHandle.cpp
+           Common/Structs.c
+           Common/ThreadDispatcher.cpp
+           Common/misc.cpp
+           Common/xml.cpp
+           CompuScopeManager/CompuScopeManager.cpp
+           CompuScopeManager/CompuScopeManager.h
+           CompuScopeManager/CompuScopeManager.rc
+           CompuScopeManager/CompuScopeManagerDlg.cpp
+           CompuScopeManager/CompuScopeManagerDlg.h
+           CompuScopeManager/CsOptionsDiag/CsOptionsDiag.cpp
+           CompuScopeManager/CsOptionsDiag/CsOptionsDiag.def
+           CompuScopeManager/CsOptionsDiag/CsOptionsDiag.rc
+           CompuScopeManager/CsOptionsDiag/DiagnosticPage.cpp
+           CompuScopeManager/CsOptionsDiag/DiagnosticPage.h
+           CompuScopeManager/CsOptionsDiag/DiagnosticPageFunctions.cpp
+           CompuScopeManager/CsOptionsDiag/DiagnosticPageFunctions.h
+           CompuScopeManager/CsOptionsDiag/res/CsOptionsDiag.rc2
+           CompuScopeManager/CsOptionsDiag/resource.h
+           CompuScopeManager/CsOptionsDiag/stdafx.cpp
+           CompuScopeManager/CsOptionsDiag/stdafx.h
+           CompuScopeManager/CsOptionsExpert/AddOn.cpp
+           CompuScopeManager/CsOptionsExpert/AddOn.h
+           CompuScopeManager/CsOptionsExpert/BaseBoard.cpp
+           CompuScopeManager/CsOptionsExpert/BaseBoard.h
+           CompuScopeManager/CsOptionsExpert/CsOptionsExpert.cpp
+           CompuScopeManager/CsOptionsExpert/CsOptionsExpert.def
+           CompuScopeManager/CsOptionsExpert/CsOptionsExpert.rc
+           CompuScopeManager/CsOptionsExpert/CsReadWriteFpga.cpp
+           CompuScopeManager/CsOptionsExpert/CsReadWriteFpga.h
+           CompuScopeManager/CsOptionsExpert/ExpertPage.cpp
+           CompuScopeManager/CsOptionsExpert/ExpertPage.h
+           CompuScopeManager/CsOptionsExpert/ExpertPageFunctions.cpp
+           CompuScopeManager/CsOptionsExpert/ExpertPageFunctions.h
+           CompuScopeManager/CsOptionsExpert/ExpertPermissions.cpp
+           CompuScopeManager/CsOptionsExpert/ExpertPermissions.h
+           CompuScopeManager/CsOptionsExpert/ExtendedListBox.cpp
+           CompuScopeManager/CsOptionsExpert/ExtendedListBox.h
+           CompuScopeManager/CsOptionsExpert/Firmware.cpp
+           CompuScopeManager/CsOptionsExpert/Firmware.h
+           CompuScopeManager/CsOptionsExpert/FpgaProgressDlg.cpp
+           CompuScopeManager/CsOptionsExpert/FpgaProgressDlg.h
+           CompuScopeManager/CsOptionsExpert/KCBusyProgressCtrl.cpp
+           CompuScopeManager/CsOptionsExpert/KCBusyProgressCtrl.h
+           CompuScopeManager/CsOptionsExpert/ToolTipListCtrl.cpp
+           CompuScopeManager/CsOptionsExpert/ToolTipListCtrl.h
+           CompuScopeManager/CsOptionsExpert/res/CsOptionsExpert.rc2
+           CompuScopeManager/CsOptionsExpert/resource.h
+           CompuScopeManager/CsOptionsExpert/stdafx.cpp
+           CompuScopeManager/CsOptionsExpert/stdafx.h
+           CompuScopeManager/CsOptionsInfo/CsOptionsInfo.cpp
+           CompuScopeManager/CsOptionsInfo/CsOptionsInfo.def
+           CompuScopeManager/CsOptionsInfo/CsOptionsInfo.rc
+           CompuScopeManager/CsOptionsInfo/InfoPage.cpp
+           CompuScopeManager/CsOptionsInfo/InfoPage.h
+           CompuScopeManager/CsOptionsInfo/InfoPageFunctions.cpp
+           CompuScopeManager/CsOptionsInfo/InfoPageFunctions.h
+           CompuScopeManager/CsOptionsInfo/SystemInfo.cpp
+           CompuScopeManager/CsOptionsInfo/SystemInfo.h
+           CompuScopeManager/CsOptionsInfo/res/CsOptionsInfo.rc2
+           CompuScopeManager/CsOptionsInfo/resource.h
+           CompuScopeManager/CsOptionsInfo/stdafx.cpp
+           CompuScopeManager/CsOptionsInfo/stdafx.h
+           CompuScopeManager/CsOptionsRm/CobraAuxIOConfig.cpp
+           CompuScopeManager/CsOptionsRm/CobraAuxIOConfig.h
+           CompuScopeManager/CsOptionsRm/CsOptionsRm.cpp
+           CompuScopeManager/CsOptionsRm/CsOptionsRm.def
+           CompuScopeManager/CsOptionsRm/CsOptionsRm.rc
+           CompuScopeManager/CsOptionsRm/DemoDialog.cpp
+           CompuScopeManager/CsOptionsRm/DemoDialog.h
+           CompuScopeManager/CsOptionsRm/DemoTables.h
+           CompuScopeManager/CsOptionsRm/JDeereAuxIOConfig.cpp
+           CompuScopeManager/CsOptionsRm/JDeereAuxIOConfig.h
+           CompuScopeManager/CsOptionsRm/RmPageFunctions.cpp
+           CompuScopeManager/CsOptionsRm/RmPageFunctions.h
+           CompuScopeManager/CsOptionsRm/RmSettingsPage.cpp
+           CompuScopeManager/CsOptionsRm/RmSettingsPage.h
+           CompuScopeManager/CsOptionsRm/SimpleAuxIOConfig.cpp
+           CompuScopeManager/CsOptionsRm/SimpleAuxIOConfig.h
+           CompuScopeManager/CsOptionsRm/ToolTipListCtrl.cpp
+           CompuScopeManager/CsOptionsRm/ToolTipListCtrl.h
+           CompuScopeManager/CsOptionsRm/res/CsOptionsRm.rc2
+           CompuScopeManager/CsOptionsRm/resource.h
+           CompuScopeManager/CsOptionsRm/stdafx.cpp
+           CompuScopeManager/CsOptionsRm/stdafx.h
+           CompuScopeManager/res/CompuScopeManager.rc2
+           CompuScopeManager/resource.h
+           CompuScopeManager/stdafx.cpp
+           CompuScopeManager/stdafx.h
+           Include/Linux/CWinEventHandle.h
+           Include/Linux/CsLinuxPort.h
+           Include/Linux/DllStruct.h
+           Include/Linux/StdAfx.h
+           Include/Private/CompMan_defs.h
+           Include/Private/CriticalSection.h
+           Include/Private/Cs16xyyCapsInfo.h
+           Include/Private/Cs8xxxCapsInfo.h
+           Include/Private/CsAdvStructs.h
+           Include/Private/CsBrainiacCal.h
+           Include/Private/CsBrainiacFlash.h
+           Include/Private/CsBrainiacOptions.h
+           Include/Private/CsBunnyCal.h
+           Include/Private/CsBunnyCapsInfo.h
+           Include/Private/CsBunnyFlash.h
+           Include/Private/CsBunnyOptions.h
+           Include/Private/CsDecadeCal.h
+           Include/Private/CsDecadeCapsInfo.h
+           Include/Private/CsDecadeFlash.h
+           Include/Private/CsDecadeOptions.h
+           Include/Private/CsDeereCal.h
+           Include/Private/CsDeereCapsInfo.h
+           Include/Private/CsDeereFlash.h
+           Include/Private/CsDeereOptions.h
+           Include/Private/CsDevRemote_Defines.h
+           Include/Private/CsDeviceIDs.h
+           Include/Private/CsDisp.h
+           Include/Private/CsDrvConst.h
+           Include/Private/CsDrvShare.h
+           Include/Private/CsDrvStructs.h
+           Include/Private/CsEventLog.h
+           Include/Private/CsFastBlFlash.h
+           Include/Private/CsFirmwareCheck.h
+           Include/Private/CsFirmwareDefs.h
+           Include/Private/CsFs.h
+           Include/Private/CsHexagonCal.h
+           Include/Private/CsHexagonCapsInfo.h
+           Include/Private/CsHexagonFlash.h
+           Include/Private/CsHexagonOptions.h
+           Include/Private/CsMarvinCal.h
+           Include/Private/CsMarvinOptions.h
+           Include/Private/CsMarvinXXLFlash.h
+           Include/Private/CsNucleonBaseFlash.h
+           Include/Private/CsPeevStruct.h
+           Include/Private/CsPrivatePrototypes.h
+           Include/Private/CsPrivateStruct.h
+           Include/Private/CsRabbitFlash.h
+           Include/Private/CsRabbitOptions.h
+           Include/Private/CsRcInfo.h
+           Include/Private/CsSharedMemory.h
+           Include/Private/CsSpiderCal.h
+           Include/Private/CsSpiderFlash.h
+           Include/Private/CsSpiderOptions.h
+           Include/Private/CsSplendaCal.h
+           Include/Private/CsSplendaCapsInfo.h
+           Include/Private/CsSplendaFlash.h
+           Include/Private/CsSplendaOptions.h
+           Include/Private/CsSsmDebug.h
+           Include/Private/CsSupport.h
+           Include/Private/CsThreadLock.h
+           Include/Private/CsVersionDB.h
+           Include/Private/CsiHeader.h
+           Include/Private/CsxyG8CapsInfo.h
+           Include/Private/Debug.h
+           Include/Private/DrvCommonType.h
+           Include/Private/Eeprom.h
+           Include/Private/EventLog.h
+           Include/Private/Gage_XML_Defines.h
+           Include/Private/LegacyAddresses.h
+           Include/Private/RawSocket.h
+           Include/Private/RawSocketServerWorker.h
+           Include/Private/RmFunctions.h
+           Include/Private/ThreadDispatcher.h
+           Include/Private/misc.h
+           Include/Private/rm.h
+           Include/Private/xml.h
+           Include/Public/CsCvi.h
+           Include/Public/CsDefines.h
+           Include/Public/CsErrors.h
+           Include/Public/CsExpert.h
+           Include/Public/CsPrototypes.h
+           Include/Public/CsStruct.h
+           Include/Public/CsTypes.h
+           Include/Public/DiskHead.h
+           Include/Public/GagePlus.h
+           Include/Public/Structs.h
+           Include/Public/gage_drv.h
+           Makefile.am
+           Middle/CsDisp/CsDisp.cpp
+           Middle/CsDisp/Makefile.am
+           Middle/CsFs/Common/CsFs.cpp
+           Middle/CsFs/Common/SigUtils.cpp
+           Middle/CsFs/Common/SigUtils.h
+           Middle/CsFs/Makefile.am
+           Middle/CsRm/Common/CsResourceManager.cpp
+           Middle/CsRm/Common/CsResourceManager.h
+           Middle/CsRm/Common/ProcessList.cpp
+           Middle/CsRm/Common/ProcessList.h
+           Middle/CsRm/Common/RM.cpp
+           Middle/CsRm/Common/Worker.cpp
+           Middle/CsRm/Common/Worker.h
+           Middle/CsRm/Makefile.am
+           Middle/CsRmDLL/Common/RmDLL.cpp
+           Middle/CsRmDLL/Common/RmFunctions.cpp
+           Middle/CsRmDLL/Makefile.am
+           Middle/CsSsm/Common/#CsSsmOps.cpp#
+           Middle/CsSsm/Common/CsDemo.cpp
+           Middle/CsSsm/Common/CsSsm.cpp
+           Middle/CsSsm/Common/CsSsm.h
+           Middle/CsSsm/Common/CsSsmConfig.cpp
+           Middle/CsSsm/Common/CsSsmDebug.cpp
+           Middle/CsSsm/Common/CsSsmFiles.cpp
+           Middle/CsSsm/Common/CsSsmInitialization.cpp
+           Middle/CsSsm/Common/CsSsmOps.cpp
+           Middle/CsSsm/Common/CsSsmStateMachine.cpp
+           Middle/CsSsm/Common/CsSsmStateMachine.h
+           Middle/CsSsm/Common/CsSsmStatus.cpp
+           Middle/CsSsm/Common/CsSsmXfer.cpp
+           Middle/CsSsm/Common/DiskStream/CsDiskChannel.cpp
+           Middle/CsSsm/Common/DiskStream/CsDiskChannel.h
+           Middle/CsSsm/Common/DiskStream/CsDiskChannelOpenClose.cpp
+           Middle/CsSsm/Common/DiskStream/CsDiskChannelWrite.cpp
+           Middle/CsSsm/Common/DiskStream/CsDiskChannelXfer.cpp
+           Middle/CsSsm/Common/DiskStream/CsDiskStream.cpp
+           Middle/CsSsm/Common/DiskStream/CsDiskStream.h
+           Middle/CsSsm/Common/EventThread.cpp
+           Middle/CsSsm/Common/SigFiles/CsSigFiles.cpp
+           Middle/CsSsm/Common/SingletonData.cpp
+           Middle/CsSsm/Common/SingletonData.h
+           Middle/CsSsm/Common/stdafx.cpp
+           Middle/CsSsm/Linux/CsErrorStruct.h
+           Middle/CsSsm/Makefile.am
+           README.txt
+           Sdk/Advanced/GageCsPrf/GageCsPrf.c
+           Sdk/Advanced/GageCsPrf/GageCsPrf.h
+           Sdk/Advanced/GageCsPrf/Makefile
+           Sdk/Advanced/GageCsPrf/Prf.ini
+           Sdk/Advanced/GageEvents/Events.h
+           Sdk/Advanced/GageEvents/Events.ini
+           Sdk/Advanced/GageEvents/Makefile
+           Sdk/Advanced/GageStream2Analysis/Makefile
+           Sdk/Advanced/GageStream2Analysis/Stream2Analysis.h
+           Sdk/Advanced/GageStream2Analysis/Stream2Analysis.ini
+           Sdk/Advanced/GageStream2Disk/Makefile
+           Sdk/Advanced/GageStream2Disk/Stream2Disk.h
+           Sdk/Advanced/GageStream2Disk/Stream2Disk.ini
+           Sdk/C_Common/CsSdkMisc.c
+           Sdk/C_Common/CsSdkMisc.h
+           Sdk/C_Common/CsSdkUtil.c
+           Sdk/C_Common/CsSdkUtil.h
+           Sdk/C_Common/CsTchar.h
+           Sdk/CsAppSupport/ConfigSystem.c
+           Sdk/CsAppSupport/CsAppSupport.c
+           Sdk/CsAppSupport/CsAppSupport.h
+           Sdk/CsAppSupport/Makefile.am
+           Sdk/CsAppSupport/SaveFile.c
+           Sdk/GageAcquire/Acquire.ini
+           Sdk/GageAcquire/Acquire_CH1.dat
+           Sdk/GageAcquire/Makefile
+           Sdk/GageCoerce/Coerce.h
+           Sdk/GageCoerce/Coerce.ini
+           Sdk/GageCoerce/Makefile
+           Sdk/GageComplexTrigger/ComplexTrigger.ini
+           Sdk/GageComplexTrigger/Makefile
+           Sdk/GageDeepAcquisition/DeepAcquisition.ini
+           Sdk/GageDeepAcquisition/Makefile
+           Sdk/GageMultipleRecord/Makefile
+           Sdk/GageMultipleRecord/MultipleRecord.ini
+           Sdk/GageMultipleSystem/Makefile
+           Sdk/GageMultipleSystem/MultipleSystem.h
+           Sdk/GageMultipleSystem/System1.ini
+           Sdk/GageMultipleSystem/System2.ini
+           Sdk/Makefile
+           Sdk/SDK_README.TXT
+           UpgradeReadme.txt
+           Utils/BootImageUpdater/BootImageUpdater.cpp
+           Utils/BootImageUpdater/BootImageUpdater.h
+           Utils/BootImageUpdater/Makefile
+           Utils/CsErrorLookup/CsErrorLookupApp.cpp
+           Utils/CsErrorLookup/CsErrorLookupApp.h
+           Utils/CsErrorLookup/CsErrorLookupMain.cpp
+           Utils/CsErrorLookup/CsErrorLookupMain.h
+           Utils/CsErrorLookup/CsGageError.cpp
+           Utils/CsErrorLookup/CsGageError.h
+           Utils/CsErrorLookup/Makefile.console
+           Utils/CsErrorLookup/Makefile.gui
+           Utils/CsErrorLookup/main.cpp
+           Utils/ErrorsH2C/ErrorsH2C.cpp
+           Utils/ErrorsH2C/Makefile
+           Utils/FirmwareUpdater/FirmwareUpdater.sln
+           Utils/FirmwareUpdater/FirmwareUpdater.vcxproj
+           Utils/FirmwareUpdater/FirmwareUtil.cpp
+           Utils/FirmwareUpdater/FirmwareUtil.h
+           Utils/FirmwareUpdater/Makefile
+           Utils/FirmwareUpdater/ReadWriteFPGA.cpp
+           Utils/FirmwareUpdater/ReadWriteFPGA.h
+           Utils/FirmwareUpdater/main.cpp
+           Utils/FirmwareUpdater/main.h
+           Utils/GageFileInfo/GageFileInfo.cpp
+           Utils/GageFileInfo/Makefile
+           Utils/GageFirmware/Makefile
+           Utils/GageJava/CsTest/CsTest.java
+           Utils/GageJava/CsTest/GageClass.java
+           Utils/GageJava/GageClass.h
+           Utils/GageJava/GageJava.cpp
+           Utils/GageJava/Makefile
+           Utils/GageSetAuxOutputs/Makefile
+           Utils/GageSetAuxOutputs/SetAuxOutputs.cpp
+           Utils/GageSetAuxOutputs/SetAuxOutputs.h
+           Utils/GageVsManager/DemoTables.h
+           Utils/GageVsManager/GageVsManager.cpp
+           Utils/GageVsManager/GageVsManager.h
+           Utils/GageVsManager/Makefile
+           Utils/TimeStampExtractor/Makefile
+           Utils/TimeStampExtractor/README.txt
+           Utils/TimeStampExtractor/TimeStampExtractor.c
+           Utils/TimeStampExtractor/TimeStampExtractor.ini
+           Utils/create_error_struct.pl
+           VersaScope/README
+           VersaScope/linux-gtk2-build/Makefile
+           VersaScope/src/configDialog.cpp
+           VersaScope/src/configDialog.h
+           VersaScope/src/gageapi/gageAPI.cpp
+           VersaScope/src/gageapi/gageAPI.h
+           VersaScope/src/gageapi/gageDisp.cpp
+           VersaScope/src/gageapi/gageDisp.h
+           VersaScope/src/gageapi/gageSSM.cpp
+           VersaScope/src/gageapi/gageSSM.h
+           VersaScope/src/gageconfiguration/gageCapabilities.cpp
+           VersaScope/src/gageconfiguration/gageCapabilities.h
+           VersaScope/src/gageconfiguration/gageConfiguration.cpp
+           VersaScope/src/gageconfiguration/gageConfiguration.h
+           VersaScope/src/gagedisplay/gageDisplayIncludes.h
+           VersaScope/src/gagedisplay/gageTimeBasedDisplay.cpp
+           VersaScope/src/gagedisplay/gageTimeBasedDisplay.h
+           VersaScope/src/gagedisplay/gageWxCursor.cpp
+           VersaScope/src/gagedisplay/gageWxCursor.h
+           VersaScope/src/gagedisplay/gageWxDataEvent.cpp
+           VersaScope/src/gagedisplay/gageWxDataEvent.h
+           VersaScope/src/gagedisplay/gageWxDisplayBase.cpp
+           VersaScope/src/gagedisplay/gageWxDisplayBase.h
+           VersaScope/src/gagedisplay/gageWxScrolledDisplay.cpp
+           VersaScope/src/gagedisplay/gageWxScrolledDisplay.h
+           VersaScope/src/gagedisplay/gageWxStaticText.cpp
+           VersaScope/src/gagedisplay/gageWxStaticText.h
+           VersaScope/src/gagedisplay/gageWxTrackbar.cpp
+           VersaScope/src/gagedisplay/gageWxTrackbar.h
+           VersaScope/src/gagesystem/gageIdleManager.cpp
+           VersaScope/src/gagesystem/gageIdleManager.h
+           VersaScope/src/gagesystem/gageSystem.cpp
+           VersaScope/src/gagesystem/gageSystem.h
+           VersaScope/src/gagesystem/gageWxThreadPoll.cpp
+           VersaScope/src/gagesystem/gageWxThreadPoll.h
+           VersaScope/src/gagesystem/gageWxThreadTransfer.cpp
+           VersaScope/src/gagesystem/gageWxThreadTransfer.h
+           VersaScope/src/includes.h
+           VersaScope/src/mainApp.cpp
+           VersaScope/src/mainApp.h
+           VersaScope/src/mainFrame.cpp
+           VersaScope/src/mainFrame.h
+           VersaScope/src/systemSelectDialog.cpp
+           VersaScope/src/systemSelectDialog.h
+           VersaScope/src/winResource.rc
+           build_modules.sh
+           common_driver.mk
+           common_middle.mk
+           configure.ac
+           dkms.conf
+           gagesc.sh
+           load_driver.sh
+           register_dkms.sh
+           version.ver
+Copyright: 2003 Cypress Semiconductor,
+           2003 Gage Applied Sciences Inc.
+           2009 Jungo Ltd.  http://www.jungo.com
+           ()
+           ; else
+           GAGE APPLIED INC
+           GAGE APPLIED TECHNOLOGIES INC
+           GAGE APPLIED TECNOLOGIES INC          **
+           GNU Library General Public License @version       $Header$ @author        R. Dengler * @language      C++ ANSI V3
+           GNU Library General Public License @version       $Header$ @author        Richard Dengler @language      C++ ANSI V3
+           __NO_COPYRIGHT_NOR_LICENSE__
+License:   __UNKNOWN__
+
+Files:     Middle/CsSsm/Common/Queue/DeferCall.h
+           Middle/CsSsm/Common/Queue/Reference.h
+           Middle/CsSsm/Common/Queue/Worker.cpp
+           Middle/CsSsm/Common/Queue/Worker.h
+Copyright: 2001 /03/01; Andreas Huber <andreas@huber.net>; Zurich; Switzerland
+License:   __UNKNOWN__
+ "Elegant Function Call Wrappers" in the May 2001 issue of the C/C++ Users Journal
+ (www.cuj.com). The material may be used, copied, distributed, modified and sold
+ free of charge, provided that this entire notice (copyright, license and
+ feedback) appears unaltered in all copies of the material.
+ All material is provided "as is", without express or implied warranty.
+ .
+ Feedback:       Please send comments to andreas@huber.net.
+
+Files:     Boards/CsSpDev/AdqApi/Jungo/Inc/wd_ver.h
+           Boards/CsSpDev/AdqApi/Jungo/Inc/windrvr_usb.h
+Copyright: 2009 Jungo Ltd.  http://www.jungo.com
+License:   GPL-2.0
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License version 2 as published by
+ the Free Software Foundation.
+ This program is distributed in the hope that it will be useful, but WITHOUT
+ ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License v2 for
+ more details.
+ You should have received a copy of the GNU General Public License along with
+ this program. If not, contact Jungo Ltd. at
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ Version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+Files:     Include/Linux/statemap.h
+           Middle/CsSsm/Common/statemap.h
+Copyright: __NO_COPYRIGHT__
+License:   __TOO_LONG_TYPE3__
+ The contents of this file are subject to the Mozilla Public
+ License Version 1.1 (the "License"); you may not use this file
+ except in compliance with the License. You may obtain a copy of
+ the License at http://www.mozilla.org/MPL/
+ .
+ Software distributed under the License is distributed on an "AS
+ IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+ implied. See the License for the specific language governing
+ rights and limitations under the License.
+ .
+ The Original Code is State Machine Compiler (SMC).
+ .
+ The Initial Developer of the Original Code is Charles W. Rapp.
+ Portions created by Charles W. Rapp are
+ Copyright (C) 2000 - 2003 Charles W. Rapp.
+ .
+ .
+ Contributor(s):
+ .
+ RCS ID
+ $Id: statemap.h,v 1.3 2001/12/14 20:10:37 cwrapp Exp $
+ .
+ Namespace
+ statemap
+ .
+ Description
+ This namespace contains the finite state machine context class.
+ The user can derive FSM contexts from this class and interface
+ to them with the methods of this class.
+ .
+ Notes
+ The finite state machine needs to be initialized to the starting
+ state of the FSM.  This must be done manually in the constructor
+ of the derived class.
+ .
+ + 416014: The initial state's Entry actions are not being
+ executed.
+ + 416015: When a transition has both a guarded and an unguarded
+ definition, the Exit actions are only called when the
+ guard evaluates to true.
+ + 422795: SMC -tcl abnormally terminates.
+ .
+ Revision 1.1.1.1  2001/01/03 03:14:00  cwrapp
+
+Files:     Middle/CsSsm/Common/CsSSMStateMachine.sm
+Copyright: __NO_COPYRIGHT__
+License:   MPL-1.1
+ The contents of this file are subject to the Mozilla Public
+ License Version 1.1 (the "License"); you may not use this file
+ except in compliance with the License. You may obtain a copy of
+ the License at http://www.mozilla.org/MPL/
+ .
+ Software distributed under the License is distributed on an "AS
+ IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+ implied. See the License for the specific language governing
+ rights and limitations under the License.
+ .
+ The Original Code is State Machine Compiler (SMC).
+ .
+ The Initial Developer of the Original Code is Charles W. Rapp.
+ Portions created by Charles W. Rapp are
+ Copyright (C) 2000 Charles W. Rapp.
+ .
+ .
+ Contributor(s):
+ .
+ State Map
+ Combine machine: Driver state machine to represent
+ hardware status.
+
+Files:     Sdk/Advanced/GageEvents/Events.c
+Copyright: 1994-2005 Gage Applied Technologies.
+License:   __UNKNOWN__
+ This code is free for personal and commercial use, providing this
+ notice remains intact in the source files and all eventual changes are
+ clearly marked with comments.
+ .
+ No warranty of any kind, expressed or implied, is included with this
+ software; use at your own risk, responsibility for damages (if any) to
+ anyone resulting from the use of this software rests entirely with the
+ user.
+ .
+ .
+ .
+ GageEvents demonstrates how to initialize, setup, acquire
+ and transfer data using a CompuScope data acquisition system.
+ Instead of polling for the status of the system, this sample
+ will wait for specific events: Trigger and End of Acquisition.
+ This sample contains 1 main thread and 1 events thread.
+ .
+ The event thread will waits for Triggered event and End of Acquisition event
+ then transfer the data from the first segment. Data from all valid channels
+ are then saved to files.
+
+Files:     Middle/CsSsm/Common/Queue/FreeFunctor.h
+Copyright: 2001 /03/01; Andreas Huber <andreas@huber.net>; Zurich; Switzerland
+License:   __UNKNOWN__
+ "Elegant Function Call Wrappers" in the May 2001 issue of the C/C++ Users Journal
+ (www.cuj.com). The material may be used, copied, distributed, modified and sold
+ free of charge, provided that this entire notice (copyright, license and
+ feedback) appears unaltered in all copies of the material.
+ All material is provided "as is", without express or implied warranty.
+ .
+ Feedback:       Please send comments to andreas@huber.net.
+ .
+ ## end module%3A9419890089.cp
+ .
+ ## Module: FreeFunctor%3A9419890089; Subprogram specification
+ ## Subsystem: DeferCall::Functors%3A9416F20253
+ ## Source file: D:\Data\Private\DeferCall\Functors\FreeFunctor.h
+
+Files:     Sdk/GageMultipleSystem/MultipleSystem.c
+Copyright: 1994-2005 Gage Applied Technologies.
+License:   __UNKNOWN__
+ This code is free for personal and commercial use, providing this
+ notice remains intact in the source files and all eventual changes are
+ clearly marked with comments.
+ .
+ No warranty of any kind, expressed or implied, is included with this
+ software; use at your own risk, responsibility for damages (if any) to
+ anyone resulting from the use of this software rests entirely with the
+ user.
+ .
+ .
+ .
+ MultipleSystem demonstrates how to initialize, setup, acquire
+ and transfer data using multiple independent CompuScope data
+ acquisition system. The data from all active channels of each
+ system are then saved to ASCII files as voltages. The work is done
+ by a thread that is created for each CompuScope system found.
+
+Files:     Sdk/GageDeepAcquisition/DeepAcquisition.c
+Copyright: 1994-2005 Gage Applied Technologies.
+License:   __UNKNOWN__
+ This code is free for personal and commercial use, providing this
+ notice remains intact in the source files and all eventual changes are
+ clearly marked with comments.
+ .
+ No warranty of any kind, expressed or implied, is included with this
+ software; use at your own risk, responsibility for damages (if any) to
+ anyone resulting from the use of this software rests entirely with the
+ user.
+ .
+ .
+ .
+ GageDeepAcquisition demonstrates how to initialize, setup, acquire
+ and transfer data using a CompuScope data acquisition system. Data from
+ all channels are then saved to ASCII files as voltages.  This example
+ also demonstrates how to transfer a large amount of acquired data by
+ transferring smaller segments of the data into separate files. These
+ segments can then be pasted together.
+
+Files:     Middle/CsSsm/Common/Queue/MemberFunctor.h
+Copyright: 2001 /03/01; Andreas Huber <andreas@huber.net>; Zurich; Switzerland
+License:   __UNKNOWN__
+ "Elegant Function Call Wrappers" in the May 2001 issue of the C/C++ Users Journal
+ (www.cuj.com). The material may be used, copied, distributed, modified and sold
+ free of charge, provided that this entire notice (copyright, license and
+ feedback) appears unaltered in all copies of the material.
+ All material is provided "as is", without express or implied warranty.
+ .
+ Feedback:       Please send comments to andreas@huber.net.
+ .
+ ## end module%3A94196B03C5.cp
+ .
+ ## Module: MemberFunctor%3A94196B03C5; Subprogram specification
+ ## Subsystem: DeferCall::Functors%3A9416F20253
+ ## Source file: D:\Data\Private\DeferCall\Functors\MemberFunctor.h
+
+Files:     Utils/GageFirmware/FirmwareUpdate.c
+Copyright: 1994-2005 Gage Applied Technologies.
+License:   __UNKNOWN__
+ This code is free for personal and commercial use, providing this
+ notice remains intact in the source files and all eventual changes are
+ clearly marked with comments.
+ .
+ No warranty of any kind, expressed or implied, is included with this
+ software; use at your own risk, responsibility for damages (if any) to
+ anyone resulting from the use of this software rests entirely with the
+ user.
+ .
+ .
+ .
+ GageSimple demonstrates how to initialize, acquire and transfer data
+ using a CompuScope data acquisition system. Data from channel 1 is
+ transferred and saved to an ASCII file as raw values.  This example
+ does not setup any parameters except the trigger timeout.  For all other
+ acquisition, channel and trigger parameters the driver defaults are used.
+
+Files:     Middle/CsSsm/Common/Queue/SimpleReferencer.h
+Copyright: 2001 /03/01; Andreas Huber <andreas@huber.net>; Zurich; Switzerland
+License:   __UNKNOWN__
+ "Elegant Function Call Wrappers" in the May 2001 issue of the C/C++ Users Journal
+ (www.cuj.com). The material may be used, copied, distributed, modified and sold
+ free of charge, provided that this entire notice (copyright, license and
+ feedback) appears unaltered in all copies of the material.
+ All material is provided "as is", without express or implied warranty.
+ .
+ Feedback:       Please send comments to andreas@huber.net.
+ .
+ ## end module%3A98F644031A.cp
+ .
+ ## Module: SimpleReferencer%3A98F644031A; Subprogram specification
+ ## Subsystem: DeferCall::Simple%3A971FA802FA
+ ## Source file: D:\Data\Private\DeferCall\Simple\SimpleReferencer.h
+
+Files:     Boards/CsSpDev/AdqApi/Jungo/Inc/bits.h
+Copyright: 2009 Jungo Ltd.  http://www.jungo.com
+License:   __UNKNOWN__
+ File - bits.h
+
+Files:     Sdk/Advanced/GageEvents/Threads.c
+Copyright: 1994-2005 Gage Applied Technologies.
+License:   __UNKNOWN__
+ This code is free for personal and commercial use, providing this
+ notice remains intact in the source files and all eventual changes are
+ clearly marked with comments.
+ .
+ No warranty of any kind, expressed or implied, is included with this
+ software; use at your own risk, responsibility for damages (if any) to
+ anyone resulting from the use of this software rests entirely with the
+ user.
+
+Files:     Common/RawSocket.cpp
+Copyright: 1994 Poul A. Costinsky
+License:   __UNKNOWN__
+ Implementation File RawSocket.cpp
+ class CWizRawSocket
+ .
+ 23/07/1996 14:54                       Author: Poul, Hadas & Oren
+
+Files:     Common/RawSocketServerWorker.cpp
+Copyright: 1994 Poul A. Costinsky
+License:   __UNKNOWN__
+ Implementation File RawSocketServerWorker.cpp
+ class CWizRawSocketServerWorker
+ .
+ 16/07/1996 17:53                             Author: Poul
+
+Files:     Sdk/GageMultipleRecord/MultipleRecord.c
+Copyright: 1994-2005 Gage Applied Technologies.
+License:   __UNKNOWN__
+ This code is free for personal and commercial use, providing this
+ notice remains intact in the source files and all eventual changes are
+ clearly marked with comments.
+ .
+ No warranty of any kind, expressed or implied, is included with this
+ software; use at your own risk, responsibility for damages (if any) to
+ anyone resulting from the use of this software rests entirely with the
+ user.
+ .
+ .
+ .
+ GageMultipleRecord demonstrates how to initialize, setup, acquire
+ and transfer data using a CompuScope data acquisition system in multiple
+ record mode. Data from each specified segment for all channels are then
+ saved to seperate ASCII files as voltages.
+
+Files:     Sdk/Advanced/GageStream2Disk/Stream2Disk.c
+Copyright: 1994-2012 Gage Applied Technologies.
+License:   __UNKNOWN__
+ This code is free for personal and commercial use, providing this
+ notice remains intact in the source files and all eventual changes are
+ clearly marked with comments.
+ .
+ No warranty of any kind, expressed or implied, is included with this
+ software; use at your own risk, responsibility for damages (if any) to
+ anyone resulting from the use of this software rests entirely with the
+ user.
+ .
+ .
+ .
+ GageStream2Disk demonstrates the Streamming to Disk capabilities of
+ CompuScope data acquisition system.  The samples program will setup the Compuscope
+ system to multiple records streaming mode. All data captured will be saved
+ into hard disk.
+
+Files:     Sdk/GageComplexTrigger/ComplexTrigger.c
+Copyright: 1994-2005 Gage Applied Technologies.
+License:   __UNKNOWN__
+ This code is free for personal and commercial use, providing this
+ notice remains intact in the source files and all eventual changes are
+ clearly marked with comments.
+ .
+ No warranty of any kind, expressed or implied, is included with this
+ software; use at your own risk, responsibility for damages (if any) to
+ anyone resulting from the use of this software rests entirely with the
+ user.
+ .
+ .
+ .
+ GageComplexTrigger demonstrates how to initialize, setup, acquire
+ and transfer data using a CompuScope data acquisition system. Data from
+ all channels are then saved to ASCII files as voltages.  This example
+ also demonstrates how to use the complex triggering available on some
+ CompuScope system. In this example, all available trigger engines in the
+ CompuScope system will be used.
+
+Files:     Middle/CsSsm/Common/Queue/Functor.h
+Copyright: 2001 /03/01; Andreas Huber <andreas@huber.net>; Zurich; Switzerland
+License:   __UNKNOWN__
+ "Elegant Function Call Wrappers" in the May 2001 issue of the C/C++ Users Journal
+ (www.cuj.com). The material may be used, copied, distributed, modified and sold
+ free of charge, provided that this entire notice (copyright, license and
+ feedback) appears unaltered in all copies of the material.
+ All material is provided "as is", without express or implied warranty.
+ .
+ Feedback:       Please send comments to andreas@huber.net.
+ .
+ ## end module%3A941F4000F1.cp
+ .
+ ## Module: Functor%3A941F4000F1; Subprogram specification
+ ## Subsystem: DeferCall::Functors%3A9416F20253
+ ## Source file: D:\Data\Private\DeferCall\Functors\Functor.h
+
+Files:     Boards/CsSpDev/AdqApi/Jungo/Inc/windrvr.h
+Copyright: 2009 Jungo Ltd.  http://www.jungo.com
+License:   __UNKNOWN__
+ W i n D r i v e r
+
+Files:     Common/Linux/WinEvent.cpp
+Copyright: GNU Library General Public License @version       $Header$ @author        R. Dengler * @language      C++ ANSI V3 @description   Emulates odd windows events. Essential classes used for this
+License:   __UNKNOWN__
+ purpose are CBaseHandle, CWinEventHandle and CWinEventHandleSet
+ (defined in this file).
+ ******************************************************************************
+
+Files:     Sdk/GageAcquire/Acquire.c
+Copyright: 1994-2005 Gage Applied Technologies.
+License:   __UNKNOWN__
+ This code is free for personal and commercial use, providing this
+ notice remains intact in the source files and all eventual changes are
+ clearly marked with comments.
+ .
+ No warranty of any kind, expressed or implied, is included with this
+ software; use at your own risk, responsibility for damages (if any) to
+ anyone resulting from the use of this software rests entirely with the
+ user.
+ .
+ .
+ .
+ GageAcquire demonstrates how to initialize, setup, acquire
+ and transfer data using a CompuScope data acquisition system. Data from
+ all channels are then saved to ASCII files as voltages.
+
+Files:     Sdk/GageCoerce/Coerce.c
+Copyright: 1994-2005 Gage Applied Technologies.
+License:   __UNKNOWN__
+ This code is free for personal and commercial use, providing this
+ notice remains intact in the source files and all eventual changes are
+ clearly marked with comments.
+ .
+ No warranty of any kind, expressed or implied, is included with this
+ software; use at your own risk, responsibility for damages (if any) to
+ anyone resulting from the use of this software rests entirely with the
+ user.
+ .
+ .
+ .
+ GageCoerce demonstrates how to initialize, setup, acquire
+ and transfer data using a CompuScope data acquisition system. Data from
+ all channels are then saved to ASCII files as voltages.  This example
+ also demonstrates how to coerce any invalid parameters to valid ones
+
+Files:     Sdk/Advanced/GageStream2Analysis/Stream2Analysis.c
+Copyright: 1994-2005 Gage Applied Technologies.
+License:   __UNKNOWN__
+ This code is free for personal and commercial use, providing this
+ notice remains intact in the source files and all eventual changes are
+ clearly marked with comments.
+ .
+ No warranty of any kind, expressed or implied, is included with this
+ software; use at your own risk, responsibility for damages (if any) to
+ anyone resulting from the use of this software rests entirely with the
+ user.
+ .
+ .
+ .
+ GageStream2Analysis demonstrates the Streamming to Analysis capabilities of
+ CompuScope data acquisition system.  The samples program will setup the Compuscope
+ system to multiple records streaming mode.  A simple function that save the timestamp of s
+ each segment is used as the analysis function.
+
+Files:     Boards/UserSpace/CsDecade12/Makefile.in
+Copyright: 1994-2014 Free Software Foundation, Inc.
+License:   __AUTO_PERMISSIVE__
+ Auto-generated file under the permissive license.
+
+#----------------------------------------------------------------------------
+# xml and html files (skipped):
+#         Sdk/GageCoerce/.project
+#         Sdk/GageCoerce/.cproject
+#         Sdk/GageMultipleRecord/.project
+#         Sdk/GageMultipleRecord/.cproject
+#         Sdk/GageDeepAcquisition/.project
+#         Sdk/GageDeepAcquisition/.cproject
+#         Sdk/GageComplexTrigger/.project
+#         Sdk/GageComplexTrigger/.cproject
+#         Sdk/GageMultipleSystem/.project
+#         Sdk/GageMultipleSystem/.cproject
+#         VersaScope/VersaScope_Resources.fbp
+#         VersaScope/src/xrc/dialog_systemselect.xrc
+#         VersaScope/src/xrc/panel_channels.xrc
+#         VersaScope/src/xrc/panel_acquisition.xrc
+#         VersaScope/src/xrc/panel_triggers.xrc
+#         VersaScope/src/xrc/dialog_config.xrc
+
+#----------------------------------------------------------------------------
+# binary files (skipped):
+#         GageVersions2.mdb
+#         GageVersionUpdateDB.mdb
+#         Manuals/Gage CompuScope Hardware Manual.pdf
+#         Manuals/INI_FILE_DESCRIPTION.pdf
+#         Manuals/CompuScope SDK for C-C#_Manual.pdf
+#         Boards/CsSpDev/AdqApi/Jungo/Lib/wdapi1002.lib
+#         Boards/CsSpDev/AdqApi/Cy/Lib/CyAPI.lib
+#         Boards/CsSpDev/AdqApi/Cy/Lib64/CyAPI.lib
+#         Sdk/GageAcquire/Acquire.o
+#         Sdk/GageAcquire/CsSdkMisc.o
+#         Sdk/GageAcquire/GageAcquire
+#         CompuScopeManager/res/CompuScopeManager.ico
+#         CompuScopeManager/CsOptionsDiag/res/Down.ico
+#         CompuScopeManager/CsOptionsDiag/res/Up.ico
+#         VersaScope/images/stop.bmp
+#         VersaScope/images/continuous.bmp
+#         VersaScope/images/acquire.bmp
+#         VersaScope/images/abort.bmp
+#         VersaScope/images/forcetrigger.bmp
+#         Utils/FirmwareUpdater/FirmwareUpdater
+#         Utils/FirmwareUpdater/main.o
+#         Utils/FirmwareUpdater/ReadWriteFPGA.o
+#         Utils/FirmwareUpdater/FirmwareUtil.o
+#         Utils/FirmwareUpdater/.vs/FirmwareUpdater/v14/.suo
+#         Utils/BootImageUpdater/BootImageUpdater.o
+#         Utils/BootImageUpdater/BootImageUpdater
+#         Middle/CsSsm/Common/ErrorsH2C.exe
+#         Middle/CsSsm/Common/statemap.jar
+#         Middle/CsSsm/Common/Smc.jar
+
+#----------------------------------------------------------------------------
+# Files marked as NO_LICENSE_TEXT_FOUND may be covered by the following
+# license/copyright files.

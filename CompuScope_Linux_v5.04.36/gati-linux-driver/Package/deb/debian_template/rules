@@ -1,0 +1,42 @@
+#!/usr/bin/make -f
+
+DIR := debian/gage-driver
+VERSION=$(shell dpkg-parsechangelog |grep ^Version:|cut -d ' ' -f 2)
+SRCDIR := usr/src/gage-driver-$(VERSION)
+
+override_dh_auto_configure:
+	./configure --build=x86_64-linux-gnu --prefix=/usr --includedir=\$${prefix}/include --sysconfdir=/etc --disable-silent-rules --libdir=\$${prefix}/lib/gage --libexecdir=\$${prefix}/lib/gage --disable-maintainer-mode --disable-dependency-tracking LDFLAGS=''
+
+clean:
+	$(MAKE) clean
+	cp Package/clean_modules.sh ./
+	./clean_modules.sh
+	rm ./clean_modules.sh
+	-rm -rf $(DIR)/usr
+
+override_dh_install:
+	dh_install
+	dh_install Boards/Csi/CsSplenda/* $(SRCDIR)/Boards/Csi/CsSplenda/
+	dh_install Boards/KernelSpace/* $(SRCDIR)/Boards/KernelSpace/
+	dh_install Boards/KernelSpace/KS_Common/* $(SRCDIR)/Boards/KernelSpace/KS_Common/
+	dh_install Boards/KernelSpace/KS_Include/* $(SRCDIR)/Boards/KernelSpace/KS_Include/
+	dh_install Boards/Bd_Include/* $(SRCDIR)/Boards/Bd_Include/
+	dh_install Include/* $(SRCDIR)/Include/
+	dh_install Common/* $(SRCDIR)/Common/
+	dh_install Package/build_modules.sh $(SRCDIR)/
+	dh_install Package/clean_modules.sh $(SRCDIR)/
+	dh_install Package/register_dkms.sh $(SRCDIR)/
+	dh_install Package/dkms.conf $(SRCDIR)/
+	dh_install Package/driver.sh $(SRCDIR)/
+	dh_install Package/gage.conf $(SRCDIR)/
+	dh_install Package/gage.sh $(SRCDIR)/
+	dh_install Package/gage-driver.conf $(SRCDIR)/
+	dh_install Package/README.user.txt $(SRCDIR)/
+	dh_install Sdk/* $(SRCDIR)/Sdk/
+
+override_dh_fixperms:
+	dh_fixperms
+	chmod a+w -R $(DIR)/$(SRCDIR)/Sdk/
+
+%:
+	dh $@

@@ -1,0 +1,182 @@
+// -*- tab-width: 4; -*-
+
+%{
+//
+// The contents of this file are subject to the Mozilla Public
+// License Version 1.1 (the "License"); you may not use this file
+// except in compliance with the License. You may obtain a copy of
+// the License at http://www.mozilla.org/MPL/
+//
+// Software distributed under the License is distributed on an "AS
+// IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+// implied. See the License for the specific language governing
+// rights and limitations under the License.
+//
+// The Original Code is State Machine Compiler (SMC).
+//
+// The Initial Developer of the Original Code is Charles W. Rapp.
+// Portions created by Charles W. Rapp are
+// Copyright (C) 2000 Charles W. Rapp.
+// All Rights Reserved.
+//
+// Contributor(s):
+//
+// State Map
+//	Combine machine: Driver state machine to represent
+//	hardware status.
+//
+
+#ifdef WIN32
+#pragma warning(disable: 4355)
+#pragma warning(disable: 4541)
+#endif
+
+/*
+This typedef is based on the state defined below. 
+The order in which the state is important since the ID attahced to them is
+based on the order except for the Default state. 
+Hence, in this case, the forst state is Init.
+Any modification to the state should modify the typedef in the .h file.
+
+typedef enum STATE_ID
+{
+  SSM_Init_ID = 0,
+  SSM_ValidConfiguration_ID,
+  SSM_InvalidConfiguration_ID,
+  SSM_Arming_ID,	
+  SSM_Ready_ID,				
+  SSM_Wait_ID,					
+  SSM_Busy_ID,					
+  SSM_DataReady_ID,
+  SSM_ValidMode_ID,
+  SSM_InvalidMode_ID,
+  SSM_MemoryAccess_ID,
+  SSM_ArmingDataReady_ID,
+  SSM_DiskStream_ID
+  };
+*/			
+%}
+
+%start SSM::Init
+%class CStateMachine
+%header CsSsmStateMachine.h
+
+%map SSM
+%%
+// State		Transition		End State				Action(s)
+Default
+{
+				reset			Init					{}
+}
+
+Init
+{
+				abort			Init					{}
+				init			Ready					{}
+				Default			Init					{RaiseError(ERROR_INVALID_TRANSITION);}
+}
+
+ValidConfiguration
+{
+				abort			ValidConfiguration		{}
+				bad_modify		InvalidConfiguration	{}
+				modify			ValidConfiguration		{}
+				commit			Arming					{}
+				start			Wait 					{ResetFlags();}
+				transfer		ValidMode				{}
+				Default			ValidConfiguration		{RaiseError(ERROR_INVALID_TRANSITION);}
+}
+
+InvalidConfiguration
+{
+				abort			InvalidConfiguration	{}
+				coerce			ValidConfiguration		{}
+				modify			ValidConfiguration     	{}
+				bad_modify		InvalidConfiguration	{}
+				start			Wait 					{ResetFlags();}
+				Default			InvalidConfiguration	{RaiseError(ERROR_INVALID_TRANSITION);}
+}
+
+Arming
+{
+				abort			InvalidConfiguration	{SetFlag(ARMING_ABORTED);}
+				done			Ready 		    		{}
+				Default			Arming					{RaiseError(ERROR_INVALID_TRANSITION);}
+}
+
+Ready
+{
+				start			Wait					{}
+				modify			ValidConfiguration    	{ResetFlags();}
+				bad_modify		InvalidConfiguration   	{ResetFlags();}
+				abort			Ready					{}
+				force_Trigger	Ready					{}
+				transfer		ValidMode				{}
+				calibrate		Arming					{}
+				Default			Ready					{RaiseError(ERROR_INVALID_TRANSITION);}
+				start_stream	DiskStream				{}
+}
+
+Wait
+{
+				abort			Wait					{SetFlag(PARTIAL_DATA);}
+				hw_event		Busy 		    		{}
+				force_Trigger	Wait	 		    	{}
+				Default			Wait					{RaiseError(ERROR_INVALID_TRANSITION);}
+}
+
+Busy
+{
+				abort			Busy					{SetFlag(PARTIAL_DATA);}
+				hw_event		DataReady				{}
+				Default			Busy					{RaiseError(ERROR_INVALID_TRANSITION);}
+}
+
+DataReady
+{
+				abort			DataReady				{}
+				transfer		ValidMode				{}
+				start			Wait 					{ResetFlags();}
+				modify			ValidConfiguration    	{ResetFlags();}
+				bad_modify		InvalidConfiguration   	{ResetFlags();}
+				calibrate		ArmingDataReady			{}
+				hw_event		DataReady	    		{}
+				Default			DataReady				{RaiseError(ERROR_INVALID_TRANSITION);}
+}
+
+ValidMode
+{
+				abort			ValidMode				{}
+				invalid			InvalidMode				{}
+				read			MemoryAccess	    	{}
+				Default			ValidMode				{RaiseError(ERROR_INVALID_TRANSITION);}
+}
+
+InvalidMode
+{
+				abort			InvalidMode				{}
+				valid			ValidMode				{}
+   				Default			InvalidMode				{RaiseError(ERROR_INVALID_TRANSITION);}
+}
+
+MemoryAccess
+{
+				abort			MemoryAccess			{}
+				done			DataReady				{}
+   				Default			MemoryAccess			{RaiseError(ERROR_INVALID_TRANSITION);}
+}
+
+ArmingDataReady
+{
+				abort			InvalidConfiguration	{SetFlag(ARMING_ABORTED);}
+				done			DataReady 		    	{}
+				Default			ArmingDataReady			{RaiseError(ERROR_INVALID_TRANSITION);}
+}
+
+DiskStream
+{
+				abort			Ready					{}
+				done			Ready	 		    	{}
+				Default			DiskStream				{RaiseError(ERROR_INVALID_TRANSITION);}
+}
+%%

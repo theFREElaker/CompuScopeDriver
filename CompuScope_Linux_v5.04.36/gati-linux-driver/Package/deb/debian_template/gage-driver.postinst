@@ -1,0 +1,44 @@
+#!/bin/bash
+
+cd /usr/src/gage-driver-#VERSION#/ > /dev/null 2>&1
+/usr/src/gage-driver-#VERSION#/build_modules.sh > /dev/null 2>&1
+cd - > /dev/null 2>&1
+
+if [ `uname -r | grep -c "BOOT"` -eq 0 ] && [ -e /lib/modules/`uname -r`/build/include ]; then
+	for MODULE_DIR in CsJohnDeere CsRabbit CsCobraMax CsSpider CsSplenda CsDecade12 CsHexagon
+	do
+	    make -C /usr/src/gage-driver-#VERSION#/Boards/KernelSpace/$MODULE_DIR/Linux install > /dev/null 2>&1
+	    make -C /usr/src/gage-driver-#VERSION#/Boards/KernelSpace/$MODULE_DIR/Linux clean > /dev/null 2>&1
+	done
+	/usr/src/gage-driver-#VERSION#/register_dkms.sh add #VERSION# --fromRPM
+fi
+
+mkdir -p /usr/local/share/Gage
+
+cp /usr/src/gage-driver-#VERSION#/Boards/Csi/CsSplenda/* /usr/local/share/Gage/
+xmlfile="/usr/local/share/Gage/GageDriver.xml"
+[ ! -e "$xmlfile" ] && echo -e "<?xml version=\"1.0\"?>\n<gageDriver>\n</gageDriver>"|sudo tee "$xmlfile" >/dev/null
+
+for driver in CscdG12 CsEcdG8 CsxyG8 Cs8xxx Cs16xyy CsE12xGy CsE16bcd; do
+    if ! grep -q $driver $xmlfile; then
+        sed -i "/<\/gageDriver>/ s/.*/\t<driver name=\"$driver\"><\/driver>\n&/" $xmlfile
+    fi
+	modprobe $driver > /dev/null 2>&1
+done
+
+install -m 644 /usr/src/gage-driver-#VERSION#/gage.conf /etc/ld.so.conf.d/
+install -m 644 /usr/src/gage-driver-#VERSION#/gage.sh /etc/profile.d/
+install -m 644 /usr/src/gage-driver-#VERSION#/gage-driver.conf /etc/modules-load.d/
+
+ldconfig
+source /etc/profile
+
+notifier="/usr/share/update-notifier/notify-reboot-required"
+if [ -x $notifier ]; then
+	eval $notifier
+fi
+
+echo "You need to relog into your account to be able to use the Gage drivers properly."
+if [ -f /usr/bin/notify-send ]; then
+	notify-send -i dialog-warning -a Gage "Logout required" "You need to relog into your account to be able to use the Gage drivers properly."
+fi

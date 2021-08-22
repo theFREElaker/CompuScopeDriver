@@ -1,0 +1,12 @@
+Source: gage-driver
+Priority: extra
+Maintainer: GaGe <support@gage-applied.com>
+Build-Depends: debhelper (>=9), dh-autoreconf
+Standards-Version: 3.9.7
+Homepage: http://www.gage-applied.com
+
+Package: gage-driver
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}, build-essential
+Description: Gage Linux driver for Debian/Ubuntu systems

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if ps ax|grep -v grep|grep -i 'csrmd'; then
+    killall csrmd
+fi
+
+for driver in CscdG12 CsEcdG8 CsxyG8 Cs8xxx Cs16xyy CsE12xGy CsE16bcd; do
+    if lsmod | grep -q $driver; then
+        rmmod $driver
+    fi
+done
+
+/usr/src/gage-driver-#VERSION#/register_dkms.sh remove #VERSION# --fromRPM
+
+for MODULE_DIR in CsJohnDeere CsRabbit CsCobraMax CsSpider CsSplenda CsDecade12 CsHexagon
+do
+    make -C /usr/src/gage-driver-#VERSION#/Boards/KernelSpace/$MODULE_DIR/Linux uninstall  > /dev/null 2>&1
+    make -C /usr/src/gage-driver-#VERSION#/Boards/KernelSpace/$MODULE_DIR/Linux clean > /dev/null 2>&1
+done
+
+rm -rf /etc/ld.so.conf.d/gage.conf \
+	/etc/profile.d/gage.sh \
+	/etc/modules-load.d/gage-driver.conf
+
+sudo ldconfig
+source /etc/profile
+rm -rf /usr/local/share/Gage

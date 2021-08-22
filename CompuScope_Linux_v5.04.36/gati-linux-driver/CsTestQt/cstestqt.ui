@@ -1,0 +1,1284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CsTestQtClass</class>
+ <widget class="QMainWindow" name="CsTestQtClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1600</width>
+    <height>664</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Arial</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>CsTestQt</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>CsTestQt.ico</normaloff>CsTestQt.ico</iconset>
+  </property>
+  <widget class="QScope" name="mainScope">
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1600</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionSave_Channels"/>
+    <addaction name="separator"/>
+    <addaction name="actionLoad_Channel"/>
+    <addaction name="separator"/>
+    <addaction name="actionLoad_Data"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuControls">
+    <property name="title">
+     <string>&amp;Controls</string>
+    </property>
+    <addaction name="actionAcquire"/>
+    <addaction name="actionContinuous"/>
+    <addaction name="actionAbort"/>
+    <addaction name="actionForce_Trigger"/>
+    <addaction name="actionForce_Calibration"/>
+    <addaction name="actionXfer_Mem"/>
+    <addaction name="actionAddon_Reset"/>
+    <addaction name="actionSystem_Reset"/>
+    <addaction name="separator"/>
+    <addaction name="actionGoToSample"/>
+    <addaction name="actionSelect_System"/>
+    <addaction name="actionInterleavedData"/>
+   </widget>
+   <widget class="QMenu" name="menuParameters">
+    <property name="title">
+     <string>&amp;Parameters</string>
+    </property>
+    <addaction name="actionConfiguration"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>&amp;Tools</string>
+    </property>
+    <addaction name="actionPerformance_Test"/>
+   </widget>
+   <widget class="QMenu" name="menuData_Transfer">
+    <property name="title">
+     <string>&amp;Data Transfer</string>
+    </property>
+    <addaction name="actionBusmaster_Synchronous"/>
+    <addaction name="actionBusmaster_Asynchronous"/>
+    <addaction name="actionSlave_Synchronous"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionDisplay_Controls"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout_CsTest"/>
+   </widget>
+   <widget class="QMenu" name="menuDebug">
+    <property name="title">
+     <string>De&amp;bug</string>
+    </property>
+    <addaction name="actionTimeStamp"/>
+    <addaction name="actionRead_Write_registers"/>
+    <addaction name="actionNIOS_SPI_command"/>
+    <addaction name="actionMulrec"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuControls"/>
+   <addaction name="menuParameters"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuData_Transfer"/>
+   <addaction name="menuHelp"/>
+   <addaction name="menuDebug"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="ShortcutToolBar">
+   <property name="font">
+    <font>
+     <family>Arial Narrow</family>
+     <pointsize>7</pointsize>
+    </font>
+   </property>
+   <property name="windowTitle">
+    <string>Shortcuts ToolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionTBAcquire"/>
+   <addaction name="actionTBContinuous"/>
+   <addaction name="actionTBAbort"/>
+   <addaction name="actionTBForce_Trigger"/>
+   <addaction name="actionTBForce_Calibration"/>
+   <addaction name="actionTBXfer_Mem"/>
+   <addaction name="actionTBAddOn_Reset"/>
+   <addaction name="actionTBSystem_Reset"/>
+   <addaction name="actionTBGoToSample"/>
+   <addaction name="actionTBConnectPoints"/>
+   <addaction name="actionTBOverdraw"/>
+   <addaction name="actionTBClearGraph"/>
+   <addaction name="actionTBShowCursor"/>
+  </widget>
+  <action name="actionAcquire">
+   <property name="text">
+    <string>Acquire</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="actionContinuous">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Continuous</string>
+   </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
+  </action>
+  <action name="actionAbort">
+   <property name="text">
+    <string>Abort</string>
+   </property>
+   <property name="shortcut">
+    <string>F3</string>
+   </property>
+  </action>
+  <action name="actionForce_Trigger">
+   <property name="text">
+    <string>Force Trigger</string>
+   </property>
+   <property name="shortcut">
+    <string>F4</string>
+   </property>
+  </action>
+  <action name="actionForce_Calibration">
+   <property name="text">
+    <string>Force Calibration</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionXfer_Mem">
+   <property name="text">
+    <string>Xfer mem</string>
+   </property>
+   <property name="shortcut">
+    <string>F6</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionAddon_Reset">
+   <property name="text">
+    <string>Addon Reset</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F5</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionSystem_Reset">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>System Reset</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+F5</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionGoToSample">
+   <property name="text">
+    <string>Go to sample</string>
+   </property>
+   <property name="shortcut">
+    <string>F8</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionSelect_System">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Select System</string>
+   </property>
+   <property name="shortcut">
+    <string>F10</string>
+   </property>
+  </action>
+  <action name="actionInterleavedData">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Interleaved data</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>Acquisition Config</string>
+   </property>
+  </action>
+  <action name="actionChannel_Config">
+   <property name="text">
+    <string>Channel Config</string>
+   </property>
+  </action>
+  <action name="actionTrigger_Config">
+   <property name="text">
+    <string>Trigger Config</string>
+   </property>
+  </action>
+  <action name="actionPerformance_Test">
+   <property name="text">
+    <string>Performance Test...</string>
+   </property>
+  </action>
+  <action name="actionBusmaster_Synchronous">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Busmaster - Synchronous</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionBusmaster_Asynchronous">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Busmaster - Asynchronous</string>
+   </property>
+  </action>
+  <action name="actionSlave_Synchronous">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Slave - Synchronous</string>
+   </property>
+  </action>
+  <action name="actionDisplay_Controls">
+   <property name="text">
+    <string>Display Controls...</string>
+   </property>
+  </action>
+  <action name="actionAbout_CsTest">
+   <property name="text">
+    <string>About CsTestQt...</string>
+   </property>
+  </action>
+  <action name="actionConfiguration">
+   <property name="text">
+    <string>Configuration</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionTBAcquire">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Acquire</string>
+   </property>
+   <property name="toolTip">
+    <string>Acquire</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Franklin Gothic Medium Cond</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+     <kerning>true</kerning>
+    </font>
+   </property>
+  </action>
+  <action name="actionTBContinuous">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Continuous</string>
+   </property>
+   <property name="toolTip">
+    <string>Continuous</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Franklin Gothic Medium Cond</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionTBAbort">
+   <property name="text">
+    <string>Abort</string>
+   </property>
+   <property name="toolTip">
+    <string>Abort</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Franklin Gothic Medium Cond</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionTBForce_Trigger">
+   <property name="text">
+    <string>Force Trigger</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Franklin Gothic Medium Cond</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionTBForce_Calibration">
+   <property name="text">
+    <string>Force Calib</string>
+   </property>
+   <property name="toolTip">
+    <string>Force Calibration</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Franklin Gothic Medium Cond</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionTBXfer_Mem">
+   <property name="text">
+    <string>Xfer mem</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Franklin Gothic Medium Cond</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionTBAddOn_Reset">
+   <property name="text">
+    <string>AddOn Reset</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Franklin Gothic Medium Cond</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionTBSystem_Reset">
+   <property name="text">
+    <string>System Reset</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Franklin Gothic Medium Cond</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionTBGoToSample">
+   <property name="text">
+    <string>Go to sample</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Franklin Gothic Medium Cond</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionTBConnectPoints">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Connect Points</string>
+   </property>
+   <property name="iconText">
+    <string>Connect Dots</string>
+   </property>
+   <property name="toolTip">
+    <string>Connect Points</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Franklin Gothic Medium Cond</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionTBOverdraw">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Overdraw</string>
+   </property>
+   <property name="toolTip">
+    <string>Overdraw</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Franklin Gothic Medium Cond</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionTBClearGraph">
+   <property name="text">
+    <string>Clear graph</string>
+   </property>
+   <property name="toolTip">
+    <string>Clear graph</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Franklin Gothic Medium Cond</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionTBShowCursor">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Cursor</string>
+   </property>
+   <property name="toolTip">
+    <string>Cursor</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Franklin Gothic Medium Cond</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionTimeStamp">
+   <property name="text">
+    <string>TimeStamp ...</string>
+   </property>
+  </action>
+  <action name="actionRead_Write_registers">
+   <property name="text">
+    <string>Read/Write registers ...</string>
+   </property>
+  </action>
+  <action name="actionNIOS_SPI_command">
+   <property name="text">
+    <string>NIOS/SPI command ...</string>
+   </property>
+  </action>
+  <action name="actionMulrec">
+   <property name="text">
+    <string>Mulrec ...</string>
+   </property>
+  </action>
+  <action name="actionSave_Channels">
+   <property name="text">
+    <string>Save Channels</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionLoad_Channel">
+   <property name="text">
+    <string>Load Channel</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionLoad_Data">
+   <property name="text">
+    <string>Load Data</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QScope</class>
+   <extends>QWidget</extends>
+   <header>qscope.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionAbout_CsTest</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_OpenAboutDialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDisplay_Controls</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_OpenControlsDialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBusmaster_Synchronous</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_SetBusMasterSynchronous()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBusmaster_Asynchronous</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_SetBusMasterASynchronous()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSlave_Synchronous</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_SetSlaveSynchronous()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPerformance_Test</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_DoPerformanceTest()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionConfiguration</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_ConfigureSystem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSelect_System</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_SelectSystem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTBAcquire</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_DoAcquisition()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTBContinuous</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_SetContinuousMode(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTBAbort</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_DoAbort()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTBForce_Trigger</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_DoForceTrigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTBForce_Calibration</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_DoForceCalibration()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTBXfer_Mem</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_XferMem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTBAddOn_Reset</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_DoAddOnReset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTBSystem_Reset</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_DoSystemReset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTBGoToSample</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_GoToSample()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTBConnectPoints</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_ConnectPoints(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTBOverdraw</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_Overdraw(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTBClearGraph</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_ClearGraph()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTBShowCursor</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_ShowCursor(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAcquire</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_DoAcquisition()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAbort</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_DoAbort()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionContinuous</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_SetContinuousMode(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionInterleavedData</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_SetInterleavedData(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionForce_Trigger</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_DoForceTrigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionForce_Calibration</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_DoForceCalibration()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionXfer_Mem</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_XferMem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAddon_Reset</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_DoAddOnReset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSystem_Reset</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_DoSystemReset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionGoToSample</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_GoToSample()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRead_Write_registers</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_ReadWriteRegs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionNIOS_SPI_command</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_NiosSpiCmd()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTimeStamp</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_SaveTimeStamp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMulrec</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_Mulrec()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_Close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSave_Channels</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_SaveChannels()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLoad_Data</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_LoadData()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLoad_Channel</sender>
+   <signal>triggered()</signal>
+   <receiver>CsTestQtClass</receiver>
+   <slot>s_LoadChannels()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>s_OpenAboutDialog()</slot>
+  <slot>s_OpenControlsDialog()</slot>
+  <slot>s_SetBusMasterSynchronous()</slot>
+  <slot>s_SetBusMasterASynchronous()</slot>
+  <slot>s_SetSlaveSynchronous()</slot>
+  <slot>s_SaveChannels()</slot>
+  <slot>s_LoadData()</slot>
+  <slot>s_Close()</slot>
+  <slot>s_ConfigureSystem()</slot>
+  <slot>s_DoPerformanceTest()</slot>
+  <slot>s_SelectSystem()</slot>
+  <slot>s_DoAcquisition()</slot>
+  <slot>s_SetContinuousMode(bool)</slot>
+  <slot>s_SetInterleavedData(bool)</slot>
+  <slot>s_DoAbort()</slot>
+  <slot>s_DoForceTrigger()</slot>
+  <slot>s_DoForceCalibration()</slot>
+  <slot>s_XferMem()</slot>
+  <slot>s_DoAddOnReset()</slot>
+  <slot>s_DoSystemReset()</slot>
+  <slot>s_GoToSample()</slot>
+  <slot>s_ConnectPoints(bool)</slot>
+  <slot>s_Overdraw(bool)</slot>
+  <slot>s_ClearGraph()</slot>
+  <slot>s_ShowCursor(bool)</slot>
+  <slot>s_SaveTimeStamp()</slot>
+  <slot>s_ReadWriteRegs()</slot>
+  <slot>s_NiosSpiCmd()</slot>
+  <slot>s_Mulrec()</slot>
+  <slot>s_LoadChannels()</slot>
+ </slots>
+</ui>

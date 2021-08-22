@@ -1,0 +1,187 @@
+
+// Generic Symbolic Links for Drivers
+// These Symbolic Links allow Applications open
+// and send down request to drivers
+
+#define	CS14xx_LINK_NAME	"Cs14xxDrv"
+
+#define	CS14200_LINK_NAME	"Cs14200Drv"
+
+#define	CS14105_LINK_NAME	"Cs14105Drv"
+
+#define	CS12xx_LINK_NAME	"Cs12xxDrv"
+
+#define	CS16xx_LINK_NAME	"Cs16xxDrv"
+
+#define	CS8500_LINK_NAME	"Cs8500Drv"
+
+#define	CS82G_LINK_NAME		"Cs82gDrv"
+
+#define	CS85G_LINK_NAME		"Cs85gDrv"
+
+#define	CS3200_LINK_NAME	"Cs3200Drv"
+
+#define	CS12400_LINK_NAME	"Cs12400Drv"
+
+#define	CS14200x_LINK_NAME	"Cs14200xDrv"
+
+#define	CS8xxx_LINK_NAME	"Cs8xxDrv"
+
+#define	CSXYG8_LINK_NAME	"Cs8xyG8Drv"
+
+#define	CSBUNNY_LINK_NAME	"CsBunnyDrv"
+
+#define	CSSPLENDA_LINK_NAME	"Cs16xyyDrv"
+
+#define	CSBRAINIAC_LINK_NAME "CsabG12Drv"
+
+
+
+//////////////////////////////////////////////////////////
+// For WDF driver and linux
+//
+
+#define	CSFASTBALL_LINK_NAME	"CsFastBallWDF"
+
+#define	CS8xxxWDF_LINK_NAME		"CsSpiderWDF"
+
+#define	CSXYG8WDF_LINK_NAME		"CsxyG8WDF"
+
+#define	CS16xyyWDF_LINK_NAME	"CsSplendaWDF"
+
+#define	CSDEEREWDF_LINK_NAME	"CsDeereWDF"
+
+#define	COBRAMAX_PCIE_LINK_NAME		"CsEcdG8WDF"
+
+#ifdef __linux__
+#define	DECADE_LINK_NAME		"CsE12xGyWDF"
+#else
+#define	DECADE_LINK_NAME		"CsE12xGyWDF"
+#endif
+
+#ifdef __linux__
+#define	HEXAGON_LINK_NAME		"CsE16bcdWDF"
+#else
+#define	HEXAGON_LINK_NAME		"CsE16bcdWDF"
+#endif
+
+
+#ifdef __linux__
+#define	CSRABBIT_PROCDIR	"CsxyG8"
+#define	CSFASTBALL_PROCDIR	"CscdG8"
+#define	CSSPIDER_PROCDIR	"Cs8xxx"
+#define	CSSPLENDA_PROCDIR	"Cs16xyy"
+#define	CSDEERE_PROCDIR		"CscdG12"
+#define	COBRAMAXPCIE_PROCDIR	"CsEcdG8"
+#define	DECADE_PROCDIR	"CsE12xGy"
+#define	HEXAGON_PROCDIR	"CsE16bcd"
+#endif
+
+
+#if defined _SPIDER_DRV_
+
+#ifdef __linux__
+#define		THIS_LINK_NAME		CSSPIDER_PROCDIR "/" CS8xxxWDF_LINK_NAME
+#define		GAGE_PROCDIR		CSSPIDER_PROCDIR
+#define		CS_SYMLINK_NAME		CS8xxxWDF_LINK_NAME
+#else
+#define		THIS_LINK_NAME		CS8xxxWDF_LINK_NAME
+#define		CS_SYMLINK_NAME		CS8xxxWDF_LINK_NAME
+#endif
+
+#define		PSEUDO_HANDLE_BASE	0x100
+
+#elif defined _FASTBALL_DRV_
+
+#ifdef __linux__
+#define		THIS_LINK_NAME		CSFASTBALL_PROCDIR "/" CSFASTBALL_LINK_NAME
+#define		GAGE_PROCDIR		CSFASTBALL_PROCDIR
+#define		CS_SYMLINK_NAME		CSFASTBALL_LINK_NAME
+#else
+#define		THIS_LINK_NAME		CSFASTBALL_LINK_NAME
+#define		CS_SYMLINK_NAME		CSFASTBALL_LINK_NAME
+#endif
+
+#define		PSEUDO_HANDLE_BASE	0x200
+
+#elif defined _RABBIT_DRV_
+
+#ifdef __linux__
+#define		THIS_LINK_NAME		CSRABBIT_PROCDIR "/" CSXYG8WDF_LINK_NAME
+#define		GAGE_PROCDIR		CSRABBIT_PROCDIR
+#define		CS_SYMLINK_NAME		CSXYG8WDF_LINK_NAME
+#else
+#define		THIS_LINK_NAME		CSXYG8WDF_LINK_NAME
+#define		CS_SYMLINK_NAME		CSXYG8WDF_LINK_NAME
+#endif
+
+#define		PSEUDO_HANDLE_BASE	0x300
+
+#elif defined _SPLENDA_DRV_
+
+#ifdef __linux__
+#define		THIS_LINK_NAME		CSSPLENDA_PROCDIR "/" CS16xyyWDF_LINK_NAME
+#define		GAGE_PROCDIR		CSSPLENDA_PROCDIR
+#define		CS_SYMLINK_NAME		CS16xyyWDF_LINK_NAME
+#else
+#define		THIS_LINK_NAME		CS16xyyWDF_LINK_NAME
+#define		CS_SYMLINK_NAME		CS16xyyWDF_LINK_NAME
+#endif
+
+#define		PSEUDO_HANDLE_BASE	0x400
+
+#elif defined _JDEERE_DRV_
+
+#ifdef __linux__
+#define		THIS_LINK_NAME		CSDEERE_PROCDIR "/" CSDEEREWDF_LINK_NAME
+#define		GAGE_PROCDIR		CSDEERE_PROCDIR
+#define		CS_SYMLINK_NAME		CSDEEREWDF_LINK_NAME
+#else
+#define		THIS_LINK_NAME		CSDEEREWDF_LINK_NAME
+#define		CS_SYMLINK_NAME		CSDEEREWDF_LINK_NAME
+#endif
+
+#define		PSEUDO_HANDLE_BASE	0x500
+
+#elif defined _COBRAMAXPCIE_DRV_
+
+#ifdef __linux__
+#define		THIS_LINK_NAME		COBRAMAXPCIE_PROCDIR "/" COBRAMAX_PCIE_LINK_NAME
+#define		GAGE_PROCDIR		COBRAMAXPCIE_PROCDIR
+#define		CS_SYMLINK_NAME		COBRAMAX_PCIE_LINK_NAME
+#else
+#define		THIS_LINK_NAME		COBRAMAX_PCIE_LINK_NAME
+#define		CS_SYMLINK_NAME		COBRAMAX_PCIE_LINK_NAME
+#endif
+
+#define		PSEUDO_HANDLE_BASE	0x600
+
+#elif defined _DECADE_DRV_
+
+#ifdef __linux__
+#define		THIS_LINK_NAME		DECADE_PROCDIR "/" DECADE_LINK_NAME
+#define		GAGE_PROCDIR		DECADE_PROCDIR
+#define		CS_SYMLINK_NAME		DECADE_LINK_NAME
+#else
+#define		THIS_LINK_NAME		DECADE_LINK_NAME
+#define		CS_SYMLINK_NAME		DECADE_LINK_NAME
+#endif
+
+#define		PSEUDO_HANDLE_BASE	0x700
+
+#elif defined _HEXAGON_DRV_
+
+#ifdef __linux__
+#define		THIS_LINK_NAME		HEXAGON_PROCDIR "/" HEXAGON_LINK_NAME
+#define		GAGE_PROCDIR		HEXAGON_PROCDIR
+#define		CS_SYMLINK_NAME		HEXAGON_LINK_NAME
+#else
+#define		THIS_LINK_NAME		HEXAGON_LINK_NAME
+#define		CS_SYMLINK_NAME		HEXAGON_LINK_NAME
+#endif
+
+#define		PSEUDO_HANDLE_BASE	0x800
+#else
+
+#endif
+
