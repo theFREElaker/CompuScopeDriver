@@ -174,7 +174,7 @@ typedef unsigned long  GEN_ATOMIC_FLAGS;
 /* Convert virtual address to physical address */
 /*---------------------------------------------*/
 /* Inline function Instead ????????????????/   */
-
+#define virt_to_bus virt_to_phys
 #define GEN_VIRT_TO_PHYS(_address_) \
     ((_address_ != 0) ? ((GEN_UINT32) virt_to_bus ((void*) (_address_))) : 0)
 
