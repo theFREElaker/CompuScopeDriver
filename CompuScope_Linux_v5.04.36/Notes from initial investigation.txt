@@ -1,0 +1,64 @@
+Notes From Building and Research
+
+From the readme I see this
+"The drivers support the following Linux distributions:
+CentOS and Redhat 7.6 (64-bit)
+Kernel v3.10.0
+Ubuntu 16.04 (64-bit)
+Kernel v4.15.0
+Ubuntu 16.04 (32-bit) (except for CompuScope Cobra and CobraMax)
+Kernel v4.4.0
+* Expert Streaming does not work in Ubuntu with kernel newer than 4.15.0-29
+* The drivers do not support more than 2 CompuScope cards in the same PC.
+* CompuScope Cobra or CobraMax does not install with Ubuntu 16.04 (32-bit)
+* Gage Resource Manager (csrmd) should be run in background before starting any programs
+that use CompuScope cards."
+
+Notes from initial investigation
+--------------------------------------------------------------------
+Packages\dkms.conf
+---------
+#CsHexagon
+BUILD_EXCLUSIVE_ARCH="x86_64"
+
+BUILT_MODULE_NAME[6]="CsE16bcd"
+MODULE_DIR[6]="CsHexagon"
+BUILT_MODULE_LOCATION[6]="Boards/KernelSpace/${MODULE_DIR[6]}/Linux"
+DEST_MODULE_LOCATION[6]="/extra"
+--------------------------------------------------------------------
+
+Module make files exist inside of
+Boards\KernelSpace\CsHexagon\Linux\Makefile
+
+Source files for modules exist at
+Include\*
+Boards\Bd_Include\*
+Boards\KernelSpace\Ks_Include\*
+Boards\KernelSpace\CsHexagon\Include\*
+
+--------------------------------------------------------------------
+X86 References
+CompuScope Linux v5.04.36/gati-linux-driver/Include/Linux/CsLinuxPort.h:
+  271  {
+  272      LONG ret;
+  273: #ifdef __x86_64__
+  274      __asm__ __volatile__( "lock; xchgl %0,(%1)" : "=r" (ret) :"r" (dest), "0" (val) : "memory" );
+  275  #else
+
+
+CompuScope Linux v5.04.36/gati-linux-driver/gagesc.sh:
+  637     # local distro=$(lsb_release -si)        ! lsb_release is not installed by default in redhat 7 !
+  638     # local distrover=$(lsb_release -sr)
+  639:    local arch=$(uname -m|sed 's|x86_||;s|i[3-6]86|32|')
+  640     local instlist=""
+  641     local wver=""
+
+  **** The above line retreives the platform architecture and is looking for whether or not it is 64 or 32 bit
+
+CompuScope Linux v5.04.36/gati-linux-driver/Package/dkms.conf:
+    6  #CsDecade
+    7  #CsHexagon
+    8: BUILD_EXCLUSIVE_ARCH="x86_64"
+    9  PACKAGE_NAME="gage-driver"
+   10  PACKAGE_VERSION="0.1.1"
+
